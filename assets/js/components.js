@@ -327,14 +327,15 @@ function renderHome(root) {
       <div>
         ${sectionHeading({
           eyebrow: "What is Workaround Amy?",
-          title: "This is where I share the systems I’m building.",
-          text: "I’m Amy Maiden — a school leader, Bay Area mom, and systems-builder. I’m also married to someone in tech, so I have been watching this AI shift up close from both the school/work side and the tech-adjacent side.",
+          title: "What is Workaround Amy?",
+          text: "Practical AI systems for the work that keeps coming back.",
         })}
       </div>
       <div class="stacked-points">
-        <p>I started building these systems because I was tired of watching smart people spend too much time rebuilding the same work from scratch. In schools, at home, and in regular life, the work does not disappear just because the system is bad. It just gets carried by someone’s brain. Usually a very tired someone.</p>
-        <p>Workaround Amy is where I share the systems I wish existed before I had to build them.</p>
-        ${amyNote("The first version does not have to be elegant. It has to be useful.")}
+        <p>Workaround Amy is where I share the systems, templates, prompts, dashboards, and workflows I’m building for school, work, and life.</p>
+        <p>Most of them start the same way: with a repeated mess that should not have to be solved from scratch every time.</p>
+        <p>The goal is simple: keep the human judgment, use the right AI for the heavy lifting, and turn the work into something you can actually reuse.</p>
+        ${amyNote("Less “look what AI can do.” More “thank goodness, now this has a system.”")}
       </div>
     </section>
     <section class="three-paths">
