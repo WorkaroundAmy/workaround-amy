@@ -1,0 +1,427 @@
+export const site = {
+  name: "Workaround Amy",
+  domain: "workaroundamy.com",
+  tagline: "Practical AI systems for school, work, and life.",
+  philosophy:
+    "Start with the chaos. Keep the judgment human. Build something you can use again.",
+  signature:
+    "Build the system once. Save your brain for the work that actually needs you.",
+};
+
+export const tutorials = [
+  {
+    id: "repeating-problem-workflow",
+    title: "How to Turn a Repeating Problem Into a System",
+    category: "Systems Thinking",
+    audience: "School leaders, operators, and everyday humans",
+    summary:
+      "Start with the thing that keeps landing back on your desk, find the repeat, and build the first useful version.",
+    relatedKitId: "workflow-idea-starter-kit",
+    youtubeUrl: "",
+    status: "Coming soon",
+  },
+  {
+    id: "ai-think-partner",
+    title: "How to Use AI as a Think Partner Without Losing Your Creativity",
+    category: "AI Tool Stack Tutorials",
+    audience: "Thoughtful beginners and busy builders",
+    summary:
+      "Use AI to sort, challenge, and draft with you while your context, taste, and judgment stay firmly in charge.",
+    relatedKitId: "workflow-idea-starter-kit",
+    youtubeUrl: "",
+    status: "First version brewing",
+  },
+  {
+    id: "committee-assignment-system",
+    title: "How to Build a Staff Committee Assignment System with Google Forms",
+    category: "School Leader Systems",
+    audience: "Principals and school operations teams",
+    summary:
+      "Collect preferences, see constraints, and stop rebuilding the same assignment spreadsheet every year.",
+    relatedKitId: "committee-assignment-workflow",
+    youtubeUrl: "",
+    status: "Coming soon",
+  },
+  {
+    id: "meeting-minutes-hub",
+    title: "The Meeting Minutes Hub Every School Leader Needs",
+    category: "School Leader Systems",
+    audience: "School leaders and committee leads",
+    summary:
+      "One clean place for agendas, decisions, action items, and the follow-up that usually tries to escape.",
+    relatedKitId: "meeting-minutes-hub",
+    youtubeUrl: "",
+    status: "In the messy middle",
+  },
+  {
+    id: "life-admin-dashboard",
+    title: "I Built a Life Admin Dashboard in Google Sheets",
+    category: "Everyday Systems",
+    audience: "Families and busy adults",
+    summary:
+      "A realistic home base for the tiny-but-relentless work of life, without turning your kitchen into a boardroom.",
+    relatedKitId: "workflow-idea-starter-kit",
+    youtubeUrl: "",
+    status: "First version brewing",
+  },
+];
+
+export const workflowKits = [
+  {
+    id: "workflow-idea-starter-kit",
+    title: "Workflow Idea Starter Kit",
+    category: "Systems Thinking",
+    audience: "Anyone with repeatable chaos",
+    painPoint: "You know the problem keeps coming back, but the shape of the system is still blurry.",
+    promise: "Name the mess, find the repeat, and sketch a first version you can actually use.",
+    includes: ["Chaos inventory", "Repeat finder", "AI handoff prompts", "First-version system map"],
+    status: "Free starter",
+    price: "",
+    ctaLabel: "Preview the kit",
+    ctaUrl: "#signup",
+  },
+  {
+    id: "committee-assignment-workflow",
+    title: "Adjunct Duty / School Committee Assignment Workflow",
+    category: "School Systems",
+    audience: "School leaders",
+    painPoint: "Preference collection and staff assignments turn into tabs, emails, caveats, and memory gymnastics.",
+    promise: "Collect preferences, make constraints visible, and create a fairer draft for human review.",
+    includes: ["Form structure", "Sheet organizer", "Sorting prompts", "Staff communication draft"],
+    status: "Being cleaned up",
+    price: "",
+    ctaLabel: "Join the list",
+    ctaUrl: "#signup",
+  },
+  {
+    id: "meeting-minutes-hub",
+    title: "Meeting Minutes Hub Workflow",
+    category: "School Systems",
+    audience: "School leaders and teams",
+    painPoint: "Agendas, decisions, and action items drift across documents, inboxes, and someone's memory.",
+    promise: "Create one meeting home base so follow-through does not depend on heroic recall.",
+    includes: ["Agenda template", "Minutes structure", "Action tracker", "AI summary prompts"],
+    status: "In the messy middle",
+    price: "",
+    ctaLabel: "Preview the kit",
+    ctaUrl: "#signup",
+  },
+  {
+    id: "staff-newsletter-builder",
+    title: "Staff Newsletter Builder Workflow",
+    category: "School Communication",
+    audience: "Principals and school leaders",
+    painPoint: "Weekly updates take more mental energy than a newsletter has any right to take.",
+    promise: "Turn scattered announcements into a staff update that is clear, warm, and reviewable.",
+    includes: ["Content intake checklist", "Drafting prompt pack", "Tone review guide", "Archive structure"],
+    status: "Being cleaned up",
+    price: "",
+    ctaLabel: "Join the list",
+    ctaUrl: "#signup",
+  },
+  {
+    id: "parent-email-pack",
+    title: "Parent Email Response Prompt Pack",
+    category: "School Communication",
+    audience: "Educators and school leaders",
+    painPoint: "Sensitive emails need clarity, warmth, boundaries, and a human who knows the situation.",
+    promise: "Draft a better first pass without handing over tone, context, or final judgment.",
+    includes: ["Response frames", "Tone check prompts", "Boundary language", "Review checklist"],
+    status: "Coming soon",
+    price: "",
+    ctaLabel: "Join the list",
+    ctaUrl: "#signup",
+  },
+  {
+    id: "yard-duty-preference",
+    title: "Yard Duty Preference Workflow",
+    category: "School Operations",
+    audience: "School leaders and office teams",
+    painPoint: "Coverage schedules have preferences, constraints, fairness questions, and last-minute surprises.",
+    promise: "Collect staff input and create a cleaner draft schedule before the human problem-solving begins.",
+    includes: ["Preference form", "Coverage tracker", "Constraint notes", "Draft message"],
+    status: "First version brewing",
+    price: "",
+    ctaLabel: "Preview the kit",
+    ctaUrl: "#signup",
+  },
+  {
+    id: "pbis-command-center-lite",
+    title: "PBIS Command Center Lite",
+    category: "School Systems",
+    audience: "School leadership teams",
+    painPoint: "Positive behavior systems fall apart when data, routines, and next steps live in different places.",
+    promise: "Create a lightweight command center for rituals, data checks, and team action.",
+    includes: ["Dashboard outline", "Meeting prompts", "Data view ideas", "Implementation notes"],
+    status: "In the messy middle",
+    price: "",
+    ctaLabel: "Join the list",
+    ctaUrl: "#signup",
+  },
+  {
+    id: "product-packaging-kit",
+    title: "Product Packaging Kit",
+    category: "Portfolio and Products",
+    audience: "Builders and consultants",
+    painPoint: "You built something useful, but it still only makes sense inside your own head.",
+    promise: "Turn a working system into a clear, teachable resource someone else can follow.",
+    includes: ["Offer map", "Asset checklist", "Landing copy prompts", "Delivery plan"],
+    status: "Being cleaned up",
+    price: "",
+    ctaLabel: "Join the list",
+    ctaUrl: "#signup",
+  },
+  {
+    id: "portfolio-case-study-builder",
+    title: "Portfolio Case Study Builder",
+    category: "Portfolio and Products",
+    audience: "Career changers, consultants, and systems thinkers",
+    painPoint: "The work is strong, but the story is still hiding in your notes, screenshots, and half-finished docs.",
+    promise: "Shape the build into a case study that shows decisions, tradeoffs, skills, and outcomes.",
+    includes: ["Case study outline", "Skills translator", "Before/after prompts", "Portfolio checklist"],
+    status: "Coming soon",
+    price: "",
+    ctaLabel: "Join the list",
+    ctaUrl: "#signup",
+  },
+];
+
+export const caseStudies = [
+  {
+    id: "principal-command-center",
+    title: "Principal Command Center",
+    problem: "Principal work moves through meetings, deadlines, staff needs, family communication, data checks, and whatever walks through the door next.",
+    realWorldMess: "Too many priorities living across calendars, inboxes, meeting notes, sticky notes, and my own brain.",
+    beforeState: "Important items were living in documents, calendars, inboxes, sticky notes, and brain space that was already fully rented.",
+    afterState: "A central leadership view for rhythms, priorities, decisions, and follow-up.",
+    tools: ["Google Sheets", "ChatGPT", "Gemini", "NotebookLM"],
+    skills: ["Operations design", "dashboard design", "implementation planning", "AI workflow design"],
+    recruiterSummary:
+      "Translated complex school leadership work into a visible operating system with clearer routines, ownership, and decision support. Why it matters: leaders get more usable signal without pretending the system can replace relationships.",
+    relatedWorkflowId: "pbis-command-center-lite",
+    status: "Drafting",
+  },
+  {
+    id: "staff-committee-assignment",
+    title: "Staff Committee Assignment Workflow",
+    problem: "Assigning staff to committees requires preferences, fairness, constraints, and communication people can trust.",
+    realWorldMess: "Trying to honor preferences, fairness, constraints, and staffing reality without building a spreadsheet monster every year.",
+    beforeState: "Manual sorting and scattered context made the process slow, opaque, and too dependent on one person's memory.",
+    afterState: "A form-to-sheet system supports cleaner preference collection and more transparent assignment drafts.",
+    tools: ["Google Forms", "Google Sheets", "Apps Script", "Gemini"],
+    skills: ["Google Workspace automation", "operations design", "communication strategy"],
+    recruiterSummary:
+      "Built a structured intake and assignment process that reduces manual sorting while keeping fairness and final review human. Why it matters: the process becomes easier to explain, adjust, and trust.",
+    relatedWorkflowId: "committee-assignment-workflow",
+    status: "Coming soon",
+  },
+  {
+    id: "pbis-command-center",
+    title: "PBIS Command Center",
+    problem: "Behavior support work needs consistent rituals, useful data, and team clarity without pretending a dashboard can replace judgment.",
+    realWorldMess: "Schoolwide systems only work if people can actually see the expectations, data, actions, and next steps.",
+    beforeState: "Data, meeting routines, and action planning were too easy to separate.",
+    afterState: "A lightweight command center connects measures, meeting rhythms, and next actions.",
+    tools: ["Google Sheets", "NotebookLM", "ChatGPT"],
+    skills: ["Data-informed decision support", "dashboard design", "training/enablement"],
+    recruiterSummary:
+      "Created an implementation-minded dashboard concept for school teams with responsible, policy-aware AI support. Why it matters: teams can connect patterns, routines, and next actions instead of treating data as a separate chore.",
+    relatedWorkflowId: "pbis-command-center-lite",
+    status: "Drafting",
+  },
+  {
+    id: "meeting-minutes-hub-case",
+    title: "Meeting Minutes Hub",
+    problem: "Meetings create agendas, notes, decisions, and action items, but the follow-through often gets scattered the minute everyone leaves.",
+    realWorldMess: "Decisions were getting made in meetings, but the follow-through was scattered across documents, inboxes, and memory.",
+    beforeState: "Important context lived across Docs, inboxes, calendars, and someone's hopeful memory.",
+    afterState: "A reusable hub structure connects agenda prep, minutes, decisions, owners, deadlines, and AI-assisted summaries for review.",
+    tools: ["Google Docs", "Google Drive", "ChatGPT", "NotebookLM"],
+    skills: ["Operations design", "product documentation", "training/enablement", "communication strategy"],
+    recruiterSummary:
+      "Designed a meeting workflow that makes decisions and follow-up easier to find, teach, and repeat. Why it matters: the meeting stops being the product; the usable next action becomes the product.",
+    relatedWorkflowId: "meeting-minutes-hub",
+    status: "In development",
+  },
+  {
+    id: "staff-newsletter-builder-case",
+    title: "Staff Newsletter Builder",
+    problem: "Weekly communication needs consistency, warmth, and accuracy without draining leadership energy every Friday afternoon.",
+    realWorldMess: "The email you rewrite every August has a Friday-afternoon cousin, and it is somehow always due right now.",
+    beforeState: "Updates were gathered from many places and rewritten from scratch, again.",
+    afterState: "A repeatable drafting process organizes announcements, reminders, tone, and review.",
+    tools: ["ChatGPT", "Gemini", "Google Docs"],
+    skills: ["Communication strategy", "prompt engineering", "product documentation"],
+    recruiterSummary:
+      "Packaged a recurring communication task into a reusable system with guardrails for voice, accuracy, and final human review. Why it matters: communication gets lighter without getting colder.",
+    relatedWorkflowId: "staff-newsletter-builder",
+    status: "Coming soon",
+  },
+  {
+    id: "workflow-portfolio-system",
+    title: "Workflow Portfolio System",
+    problem: "AI-enabled systems work can be hard to explain to nontechnical audiences, even when the work itself is strong.",
+    realWorldMess: "Useful builds were hiding in notes, screenshots, half-finished docs, and explanations that only made sense after coffee.",
+    beforeState: "Useful builds existed as disconnected notes, prototypes, screenshots, and 'I swear this makes sense' explanations.",
+    afterState: "A portfolio structure translates systems work into case studies, skills, and product opportunities.",
+    tools: ["Codex", "Claude", "ChatGPT"],
+    skills: ["Portfolio storytelling", "product thinking", "documentation", "implementation planning"],
+    recruiterSummary:
+      "Built a scalable portfolio architecture that makes systems thinking, implementation choices, and communication skill visible. Why it matters: practical AI work becomes legible to recruiters, collaborators, and customers.",
+    relatedWorkflowId: "portfolio-case-study-builder",
+    status: "Published",
+  },
+];
+
+export const aiTools = [
+  {
+    name: "ChatGPT",
+    role: "Sounding board and strategist",
+    bestFor: "Messy thinking, planning, communication drafts, scripts, and first-pass templates.",
+    howAmyUsesIt:
+      "To get the thinking out of her head, pressure-test options, and turn a rough idea into something workable.",
+    humanJudgmentReminder: "It can draft the map. Amy still decides where the road should go.",
+  },
+  {
+    name: "Gemini",
+    role: "Google Workspace-connected assistant",
+    bestFor: "Reusable Gems, role-specific assistants, repeated Google Workspace tasks, and school-life admin.",
+    howAmyUsesIt:
+      "To work closer to the places school and life already live: Docs, Sheets, Drive, Gmail, and Calendar.",
+    humanJudgmentReminder: "Workspace access makes review and boundaries even more important.",
+  },
+  {
+    name: "NotebookLM",
+    role: "Source-grounded sense-maker",
+    bestFor: "Handbooks, source sets, training materials, and source-based summaries.",
+    howAmyUsesIt:
+      "To make sense of a pile of source material before turning it into summaries, questions, or planning notes.",
+    humanJudgmentReminder: "Source-grounded does not mean policy-approved. Humans still verify.",
+  },
+  {
+    name: "Claude",
+    role: "Long-form drafter and prototype partner",
+    bestFor: "Long-form drafting, polished explanations, artifacts, prototypes, and a different writing feel.",
+    howAmyUsesIt:
+      "To shape longer resources, compare tone options, and make a rough explanation easier to hand to another human.",
+    humanJudgmentReminder: "Good writing still needs context, audience, and final review.",
+  },
+  {
+    name: "Script.new / Apps Script",
+    role: "Google tool builder",
+    bestFor: "Sheets automation, Forms, Docs, dashboards, and lightweight Google scripts.",
+    howAmyUsesIt:
+      "To turn a good idea into a working Google tool when copy-paste has clearly overstayed its welcome.",
+    humanJudgmentReminder: "Automation should support the process, not hide the decision-making.",
+  },
+  {
+    name: "Codex",
+    role: "Site and product build partner",
+    bestFor: "Website building, reusable components, product pages, portfolio structure, and debugging.",
+    howAmyUsesIt:
+      "To turn strategy, content architecture, and half-sketched product ideas into polished web pages.",
+    humanJudgmentReminder: "A polished build still needs a clear point of view.",
+  },
+];
+
+export const schoolCategories = [
+  {
+    title: "Communication",
+    description: "Staff updates, parent messages, tone review, and recurring announcements that need clarity and care.",
+    examples: ["Staff Newsletter Builder", "Parent Communication Prompt Pack"],
+  },
+  {
+    title: "Staff Systems",
+    description: "Preference collection, committee assignments, coverage, and shared responsibilities with fewer mystery tabs.",
+    examples: ["Principal Command Center", "Yard Duty Preference Workflow"],
+  },
+  {
+    title: "Meeting Systems",
+    description: "Agendas, minutes, action items, decisions, and the follow-up that makes meetings worth having.",
+    examples: ["Meeting Minutes Hub", "SSC/ELAC Planning Workflow"],
+  },
+  {
+    title: "PBIS / MTSS",
+    description: "Team routines, data views, supports, and action planning structures that stay connected to people.",
+    examples: ["PBIS Command Center", "Discipline Data Dashboard"],
+  },
+  {
+    title: "Data Dashboards",
+    description: "Readable views that help teams notice patterns, ask better questions, and decide what to do next.",
+    examples: ["Principal Command Center", "Discipline Data Dashboard"],
+  },
+  {
+    title: "Event & Operations",
+    description: "Planning checklists, role clarity, communication timelines, and logistics that do not live in one person's head.",
+    examples: ["Event Planning Assistant", "Yard Duty Preference Workflow"],
+  },
+  {
+    title: "Governance",
+    description: "Planning calendars, meeting structures, and documentation support for the groups schools depend on.",
+    examples: ["SSC/ELAC Planning Workflow", "Meeting Minutes Hub"],
+  },
+  {
+    title: "Special Education / Compliance-aware Systems",
+    description:
+      "Organizational trackers and planning supports that must be customized to local policy, law, and approved tools.",
+    examples: ["Service tracker concept", "Meeting preparation checklist"],
+    note: "These are organizational supports, not legal advice, compliance findings, or a substitute for approved district processes.",
+  },
+];
+
+export const everydayCategories = [
+  {
+    title: "Life Admin",
+    description: "The paperwork, renewals, forms, appointments, and reminders that keep finding you like they have your calendar password.",
+    examples: ["Life Admin Dashboard", "Weekly Reset Workflow"],
+  },
+  {
+    title: "Family Systems",
+    description: "Shared routines, calendars, responsibilities, and the invisible load made visible enough to share.",
+    examples: ["Family Command Center", "Kids' Activity Calendar"],
+  },
+  {
+    title: "Home Projects",
+    description: "Track decisions, costs, photos, and next actions without asking, 'Wait, where did we put that?'",
+    examples: ["Home Project Tracker", "Household Responsibility Tracker"],
+  },
+  {
+    title: "Travel Planning",
+    description: "Plans, reservations, packing, budgets, kid logistics, and backup options in one calm place.",
+    examples: ["Vacation Planning Workflow"],
+  },
+  {
+    title: "Meal Planning",
+    description: "A realistic weekly food plan that respects schedules, preferences, and the fact that people get tired.",
+    examples: ["Meal Planning Workflow"],
+  },
+  {
+    title: "Kids' Activities",
+    description: "Calendars, forms, rides, fees, snacks, and the thousand tiny details around activities.",
+    examples: ["Kids' Activity Calendar"],
+  },
+  {
+    title: "Household Responsibilities",
+    description: "Clear ownership for recurring tasks without turning home into a status meeting.",
+    examples: ["Household Responsibility Tracker"],
+  },
+  {
+    title: "Personal Communication",
+    description: "Drafts, scripts, and reminders for messages that need care, clarity, and maybe a minute before sending.",
+    examples: ["Weekly Reset Workflow"],
+  },
+];
+
+export const skills = [
+  "AI workflow design",
+  "Google Workspace automation",
+  "prompt engineering",
+  "operations design",
+  "communication strategy",
+  "dashboard design",
+  "implementation planning",
+  "product documentation",
+  "training/enablement",
+  "data-informed decision support",
+  "portfolio storytelling",
+];
