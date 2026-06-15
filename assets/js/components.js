@@ -367,11 +367,11 @@ function renderHome(root) {
     <section class="amy-way-preview">
       <div>
         ${sectionHeading({ eyebrow: "Featured", title: "How I think when the work gets messy" })}
-        <p class="large-copy">I do not usually start with the tool. I start with the part of the work that is making everyone quietly lose their minds.</p>
+        <p class="amy-way-copy">I do not usually start with the tool. I start with the part of the work that is making everyone quietly lose their minds.</p>
         <a class="button primary" href="how-i-think.html">Read How I Think</a>
       </div>
       <ol class="home-step-list">
-        ${["Name the chaos.", "Find the repeat.", "Pick the right tool.", "Clean it up like a human."].map((step, index) => `<li><span>${index + 1}</span>${step}</li>`).join("")}
+        ${["Name the chaos.", "Find the repeat.", "Pick the right handoff.", "Clean it up like a human."].map((step, index) => `<li><span>${index + 1}</span>${step}</li>`).join("")}
       </ol>
     </section>
     <section>
