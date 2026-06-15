@@ -315,7 +315,7 @@ function renderHome(root) {
       <div class="hero-copy">
         <p class="eyebrow">${site.tagline}</p>
         <h1>I turn repeatable chaos into systems that actually work.</h1>
-        <p class="lede">Workaround Amy is where I share the systems I’m building for the spreadsheet nobody wants to rebuild, the email you rewrite every August, and the calendar item that should have become a task three weeks ago.</p>
+        <p class="lede">Workaround Amy is where I share practical AI systems for the repeated work of school, work, and life — the planning, communication, templates, dashboards, and decisions that keep coming back.</p>
         <p class="philosophy-line">${site.philosophy}</p>
         <div class="button-row">
           <a class="button primary" href="workflow-kits.html">Explore Workflow Kits</a>
@@ -323,17 +323,15 @@ function renderHome(root) {
         </div>
       </div>
     </section>
-    <section class="split-section system-studio">
-      <div>
-        ${sectionHeading({
-          eyebrow: "What is Workaround Amy?",
-          title: "What is Workaround Amy?",
-          text: "Practical AI systems for the work that keeps coming back.",
-        })}
-      </div>
+    <section class="system-studio">
+      ${sectionHeading({
+        eyebrow: "What is Workaround Amy?",
+        title: "What is Workaround Amy?",
+        text: "Practical AI systems for the work that keeps coming back.",
+      })}
       <div class="stacked-points">
         <p>Workaround Amy is where I share the systems, templates, prompts, dashboards, and workflows I’m building for school, work, and life.</p>
-        <p>Most of them start the same way: with a repeated mess that should not have to be solved from scratch every time.</p>
+        <p>Most of them start the same way: with a repeated problem that should not have to be solved from scratch every time it shows up.</p>
         <p>The goal is simple: keep the human judgment, use the right AI for the heavy lifting, and turn the work into something you can actually reuse.</p>
         ${amyNote("Less “look what AI can do.” More “thank goodness, now this has a system.”")}
       </div>
