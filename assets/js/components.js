@@ -25,7 +25,8 @@ const statusClass = (status = "") =>
 
 const list = (items) => items.map((item) => `<li>${item}</li>`).join("");
 
-const logoAsset = "public/images/workaround-amy-logo.png";
+const logoAsset = "public/images/workaround-amy-logo-tight.png";
+const footerLogoAsset = "public/images/workaround-amy-logo.png";
 const bannerAsset = "public/images/workaround-amy-banner.png";
 const profileAsset = "public/images/workaround-amy-profile.png";
 
@@ -77,7 +78,7 @@ export function renderFooter() {
       <div class="footer-grid">
         <div>
           <a class="brand-mark footer-brand" href="index.html">
-            <img class="brand-logo" src="${logoAsset}" alt="Workaround Amy">
+            <img class="brand-logo" src="${footerLogoAsset}" alt="Workaround Amy">
           </a>
           <p>${site.philosophy}</p>
         </div>
