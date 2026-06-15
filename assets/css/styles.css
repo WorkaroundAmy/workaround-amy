@@ -1402,8 +1402,9 @@ p {
   display: block;
   width: 100%;
   aspect-ratio: 4 / 4.95;
-  object-fit: cover;
-  object-position: center 8%;
+  object-fit: contain;
+  object-position: center top;
+  background: var(--white);
 }
 
 .profile-card figcaption {
