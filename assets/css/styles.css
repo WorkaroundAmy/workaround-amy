@@ -1381,17 +1381,6 @@ p {
   box-shadow: var(--shadow-card);
 }
 
-.profile-card::before {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  z-index: 1;
-  color: var(--teal-deep);
-  content: "~>";
-  font-size: 1.25rem;
-  font-weight: 950;
-}
-
 .profile-image-wrap {
   position: relative;
   overflow: hidden;
@@ -1412,9 +1401,9 @@ p {
 .profile-card img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 4.85;
+  aspect-ratio: 4 / 4.95;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 8%;
 }
 
 .profile-card figcaption {
