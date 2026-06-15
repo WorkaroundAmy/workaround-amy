@@ -261,6 +261,17 @@ function compactCaseCard(study) {
     </article>`;
 }
 
+function homeProofCard(study) {
+  return `
+    <article class="content-card compact-card home-proof-card">
+      <div class="card-topline"><span>Proof of work</span></div>
+      <h3>${study.title}</h3>
+      <p><strong>Problem:</strong> ${study.problem}</p>
+      <p><strong>System:</strong> ${study.afterState}</p>
+      <p><strong>Tools:</strong> ${study.tools.join(", ")}</p>
+    </article>`;
+}
+
 function compactKitCard(kit) {
   return `
     <article class="content-card compact-card">
@@ -305,9 +316,6 @@ function renderHome(root) {
   const featuredCases = ["principal-command-center", "staff-committee-assignment", "pbis-command-center"]
     .map((id) => caseStudies.find((study) => study.id === id))
     .filter(Boolean);
-  const featuredKits = ["workflow-idea-starter-kit", "meeting-minutes-hub", "staff-newsletter-builder"]
-    .map((id) => workflowKits.find((kit) => kit.id === id))
-    .filter(Boolean);
   root.innerHTML = `
     <section class="brand-hero">
       <figure class="hero-banner">
@@ -316,25 +324,20 @@ function renderHome(root) {
       <div class="hero-copy">
         <p class="eyebrow">${site.tagline}</p>
         <h1>I turn repeatable chaos into systems that actually work.</h1>
-        <p class="lede">Workaround Amy is where I share practical AI systems for the repeated work of school, work, and life — the planning, communication, templates, dashboards, and decisions that keep coming back.</p>
+        <p class="hero-subheadline">Practical AI systems for school, work, and life.</p>
+        <p class="lede">Workaround Amy is where I share practical systems for the repeated work that keeps coming back — the planning, communication, dashboards, templates, and decisions that need a better place to live.</p>
         <p class="philosophy-line">${site.philosophy}</p>
         <div class="button-row">
-          <a class="button primary" href="workflow-kits.html">Explore Workflow Kits</a>
+          <a class="button primary" href="how-i-think.html">Read How I Think</a>
           <a class="button secondary" href="proof-of-work.html">See Proof of Work</a>
         </div>
       </div>
     </section>
     <section class="system-studio">
-      ${sectionHeading({
-        eyebrow: "What is Workaround Amy?",
-        title: "What is Workaround Amy?",
-        text: "Practical AI systems for the work that keeps coming back.",
-      })}
-      <div class="stacked-points">
-        <p>Workaround Amy is where I share the systems, templates, prompts, dashboards, and workflows I’m building for school, work, and life.</p>
-        <p>Most of them start the same way: with a repeated problem that should not have to be solved from scratch every time it shows up.</p>
-        <p>The goal is simple: keep the human judgment, use the right AI for the heavy lifting, and turn the work into something you can actually reuse.</p>
-        ${amyNote("Less “look what AI can do.” More “thank goodness, now this has a system.”")}
+      ${sectionHeading({ title: "What is Workaround Amy?" })}
+      <div class="about-home-copy">
+        <p>Some work keeps coming back. The email gets rewritten. The spreadsheet gets rebuilt. The meeting notes disappear. The decision gets remade. The task lives in someone’s brain because the system around it is not clear enough yet.</p>
+        <p>Workaround Amy is about finding the repeat inside that work and turning it into something reusable — with the right AI support and the human judgment still intact.</p>
       </div>
     </section>
     <section class="three-paths">
@@ -346,13 +349,13 @@ function renderHome(root) {
       <div class="card-grid three">
         ${pathwayCard({
           title: "School Systems",
-          text: "Dashboards, staff workflows, meeting hubs, communication systems, and the school system that only makes sense because one person remembers how it works.",
+          text: "Tools and workflows for school operations, communication, meetings, and the invisible work of leadership.",
           href: "school-systems.html",
           label: "Explore school systems",
         })}
         ${pathwayCard({
           title: "Everyday Systems",
-          text: "Life admin, family logistics, home projects, travel, and the family logistics that live in your head until they explode.",
+          text: "Practical systems for life admin, family logistics, planning, projects, and the recurring work that follows you home.",
           href: "everyday-systems.html",
           label: "Explore everyday systems",
         })}
@@ -375,18 +378,15 @@ function renderHome(root) {
       </ol>
     </section>
     <section>
-      ${sectionHeading({ eyebrow: "Featured", title: "Proof of Work", text: "A few real systems that show how calendars, meetings, staff communication, school operations, and invisible brain-work become tools people can actually use." })}
-      <div class="card-grid">${featuredCases.map(compactCaseCard).join("")}</div>
-    </section>
-    <section>
-      ${sectionHeading({ eyebrow: "Featured", title: "Workflow Kits", text: "Some are for school. Some are for home. Most started as a mess I did not want to solve twice." })}
-      <div class="card-grid">${featuredKits.map(compactKitCard).join("")}</div>
+      ${sectionHeading({ eyebrow: "Proof of Work", title: "A few systems in progress", text: "Short examples of the practical builds behind Workaround Amy." })}
+      <div class="card-grid">${featuredCases.map(homeProofCard).join("")}</div>
+      <div class="section-action"><a class="button secondary" href="proof-of-work.html">See Proof of Work</a></div>
     </section>
     ${ctaSection({
       title: site.signature,
-      text: "The work will come back around. The system should be ready when it does.",
-      primary: ["Explore Workflow Kits", "workflow-kits.html"],
-      secondary: ["Read How I Think", "how-i-think.html"],
+      text: "Start with one repeatable mess. Turn it into something you can reuse.",
+      primary: ["Read How I Think", "how-i-think.html"],
+      secondary: ["Explore Workflow Kits", "workflow-kits.html"],
     })}`;
 }
 

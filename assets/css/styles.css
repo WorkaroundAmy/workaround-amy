@@ -311,6 +311,14 @@ p {
   line-height: 1.58;
 }
 
+.hero-subheadline {
+  max-width: 720px;
+  margin: 0 auto 14px;
+  color: var(--navy);
+  font-size: clamp(1.12rem, 1.5vw, 1.28rem);
+  font-weight: 900;
+}
+
 .hero-for {
   max-width: 660px;
   margin-top: -6px;
@@ -795,6 +803,18 @@ p {
   margin-bottom: 22px;
 }
 
+.about-home-copy {
+  display: grid;
+  gap: 16px;
+  max-width: 880px;
+}
+
+.about-home-copy p {
+  margin: 0;
+  color: var(--body);
+  font-size: 1.04rem;
+}
+
 .stacked-points {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -899,6 +919,14 @@ p {
 .compact-card .button {
   width: fit-content;
   margin-top: auto;
+}
+
+.home-proof-card {
+  min-height: auto;
+}
+
+.section-action {
+  margin-top: 22px;
 }
 
 .card-topline {
