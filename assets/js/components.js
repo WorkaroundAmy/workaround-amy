@@ -328,7 +328,7 @@ function renderHome(root) {
         ${sectionHeading({
           eyebrow: "What is Workaround Amy?",
           title: "This is where I share the systems I’m building.",
-          text: "I’m Amy Maiden — a 16-year educator, school leader, Bay Area mom, and systems-builder. I’m also married to someone in tech, so I have been watching this AI shift up close from both the school/work side and the tech-adjacent side.",
+          text: "I’m Amy Maiden — a school leader, Bay Area mom, and systems-builder. I’m also married to someone in tech, so I have been watching this AI shift up close from both the school/work side and the tech-adjacent side.",
         })}
       </div>
       <div class="stacked-points">
@@ -409,7 +409,7 @@ function renderHow(root) {
       ${sectionHeading({
         eyebrow: "Useful over magical",
         title: "I do not need AI to be magic. I need it to be useful.",
-        text: "I am a 16-year educator, school leader, mother of two, and Bay Area human watching the world change in real time. I build from real chaos: calendars, meetings, staff communication, school operations, family logistics, templates, dashboards, recurring decisions, and the invisible work that lives in people’s brains.",
+        text: "I am an educator and operator, a school leader, mother of two, and Bay Area human watching the world change in real time. I build from real chaos: calendars, meetings, staff communication, school operations, family logistics, templates, dashboards, recurring decisions, and the invisible work that lives in people’s brains.",
       })}
       <p class="large-copy">It is not a replacement for judgment. The work still needs context, care, relationships, ethics, policy awareness, and someone willing to say, “That is technically clever, but not right for this situation.”</p>
     </section>
