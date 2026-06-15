@@ -564,10 +564,24 @@ function renderAbout(root) {
             <img src="${profileAsset}" alt="Portrait of Amy Maiden wearing a navy blazer and teal blouse, smiling against a clean white background.">
           </div>
         </figure>
-        <p class="lede">I’m Amy Maiden — a 16-year educator, school leader, principal, Bay Area mom of two, and systems-builder.</p>
-        <p>I have spent years doing complex people work in places where the stakes are real, the inbox is not gentle, and the system still has to function tomorrow morning.</p>
-        <p>My husband works in tech, my work lives in schools, and our dinner-table conversations have made one thing very clear: the world is moving quickly, but real people still need practical ways to keep up without handing over their judgment.</p>
+        <p class="lede">I’m Amy Maiden — a 16-year educator, principal, Bay Area mom of two, and systems-builder.</p>
+        <p>For years, I have worked in schools, where the work is deeply human, the stakes are real, the inbox is not gentle, and the system still has to function tomorrow morning. Schools have a way of showing you exactly where the gaps are: the repeated decisions, the scattered information, the communication that gets rebuilt every year, and the invisible work people carry because the system around it is not clear enough yet.</p>
+        <p>At home, I’m also living the regular-life version of that same reality: calendars, logistics, decisions, planning, family routines, and all the things that somehow end up living in someone’s brain.</p>
+        <p>My husband works in tech, my work lives in schools, and our dinner-table conversations have made one thing very clear: the world is moving quickly. But real people still need practical ways to keep up without handing over their judgment, creativity, relationships, or context.</p>
         <p>That is where Workaround Amy started.</p>
+        <p>Not because I wanted AI to be magic.</p>
+        <p>Because I needed it to be useful.</p>
+        <p>Workaround Amy is where I teach, package, and share the systems I am building for school, work, and life.</p>
+        <p>The point is not to chase every new tool. The point is to notice the work that keeps coming back, find the repeat inside it, and build something reusable so your brain is not starting from scratch every time.</p>
+        <p>AI can help with the heavy lifting: sorting, drafting, structuring, summarizing, organizing, and building a first version.</p>
+        <p>But the human part stays human.</p>
+        <div class="human-lines">
+          <span>The context still matters.</span>
+          <span>The relationships still matter.</span>
+          <span>The ethics still matter.</span>
+          <span>The final decision still belongs to a person.</span>
+        </div>
+        <p>The magic is not the tool. It is the handoff.</p>
       </div>
     </section>
     <section class="origin-section">
