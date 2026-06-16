@@ -168,6 +168,33 @@ export function amyNote(text) {
     </aside>`;
 }
 
+export function freebieSection() {
+  const downloadUrl = "/downloads/workflow-idea-starter-kit-workaround-amy.pdf";
+  return `
+    <section class="freebie-callout">
+      <div>
+        <p class="eyebrow">Free 15-minute guide</p>
+        <h2>Workflow Idea Starter Kit</h2>
+        <p class="lede">Turn one recurring problem into a system you can actually reuse.</p>
+        <p>This free guide helps you notice one piece of repeated work, give AI enough context to be useful, and choose a first version worth trying.</p>
+        <p class="freebie-list-label">Inside, you’ll get:</p>
+        <ul class="check-list">
+          ${list([
+            "The Workaround Amy way of looking at repeated work",
+            "A quick example",
+            "A 5-question copy/paste prompt",
+            "A simple human review checklist",
+            "A quick container guide",
+          ])}
+        </ul>
+      </div>
+      <div class="freebie-action">
+        <p>No giant workbook. No overbuilt dashboard. No homework before you start. Just one repeated mess, one useful prompt, and a first version you can try.</p>
+        <a class="button primary" href="${downloadUrl}" target="_blank" rel="noopener">Download the free guide</a>
+      </div>
+    </section>`;
+}
+
 export function pathwayCard({ title, text, href, label }) {
   return `
     <article class="pathway-card">
@@ -201,6 +228,7 @@ export function tutorialCard(tutorial) {
 
 export function workflowKitCard(kit) {
   const priceMarkup = kit.price ? `<span class="price">${kit.price}</span>` : `<span class="price muted-price">Price not posted yet</span>`;
+  const targetMarkup = kit.ctaTarget ? ` target="${kit.ctaTarget}" rel="noopener"` : "";
   return `
     <article class="content-card kit-card">
       <div class="card-topline">
@@ -214,7 +242,7 @@ export function workflowKitCard(kit) {
       <ul class="check-list">${list(kit.includes)}</ul>
       <div class="card-actions">
         ${priceMarkup}
-        <a class="button secondary small" href="${kit.ctaUrl}">${kit.ctaLabel}</a>
+        <a class="button secondary small" href="${kit.ctaUrl}"${targetMarkup}>${kit.ctaLabel}</a>
       </div>
     </article>`;
 }
@@ -342,6 +370,7 @@ function renderHome(root) {
         <p class="mobile-home-copy">Some work keeps coming back: the emails, spreadsheets, decisions, meetings, and tasks that keep living in someone’s brain. Workaround Amy is about finding the repeat and turning it into something reusable — with AI support and human judgment intact.</p>
       </div>
     </section>
+    ${freebieSection()}
     <section class="three-paths">
       ${sectionHeading({
         eyebrow: "Choose your path",

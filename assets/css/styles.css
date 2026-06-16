@@ -1222,6 +1222,53 @@ p {
   margin-bottom: 0;
 }
 
+.freebie-callout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.48fr);
+  gap: 28px;
+  align-items: center;
+  padding: 30px;
+  border: 1px solid rgba(24, 184, 178, 0.34);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(223, 248, 246, 0.42)),
+    var(--white);
+  box-shadow: var(--shadow-card);
+}
+
+.freebie-callout h2 {
+  margin-bottom: 12px;
+}
+
+.freebie-callout .lede {
+  margin-bottom: 10px;
+  color: var(--navy);
+  font-weight: 850;
+}
+
+.freebie-callout .check-list {
+  margin-top: 8px;
+}
+
+.freebie-list-label {
+  margin: 14px 0 0;
+  color: var(--navy);
+  font-weight: 900;
+}
+
+.freebie-action {
+  padding: 20px;
+  border-left: 5px solid var(--teal);
+  border-radius: var(--radius);
+  background: var(--white);
+}
+
+.freebie-action p {
+  margin-bottom: 18px;
+  color: var(--navy);
+  font-weight: 760;
+}
+
 .proof-signal {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
@@ -1621,6 +1668,7 @@ p {
   .brand-hero,
   .split-section,
   .amy-way-preview,
+  .freebie-callout,
   .signup-panel,
   .cta-band,
   .story-section,
@@ -1830,6 +1878,25 @@ p {
     margin-bottom: 0;
   }
 
+  .freebie-callout {
+    gap: 18px;
+  }
+
+  .freebie-callout h2 {
+    font-size: 1.85rem;
+  }
+
+  .freebie-callout .lede,
+  .freebie-callout p,
+  .freebie-callout .check-list li {
+    font-size: 0.94rem;
+    line-height: 1.42;
+  }
+
+  .freebie-action {
+    padding: 16px;
+  }
+
   .kit-card:nth-child(3n + 2) {
     transform: none;
   }
@@ -1889,6 +1956,7 @@ p {
   .pull-quote,
   .system-studio,
   .shop-shelf,
+  .freebie-callout,
   .proof-signal,
   .handoff-section {
     padding: 20px;
@@ -1909,6 +1977,7 @@ p {
   }
 
   .brand-hero .button,
+  .freebie-action .button,
   .cta-band .button {
     width: 100%;
   }
