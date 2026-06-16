@@ -531,6 +531,88 @@ p {
   font-weight: 900;
 }
 
+.amy-way-system {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(300px, 0.72fr);
+  gap: 24px;
+  align-items: center;
+}
+
+.amy-way-system .section-heading {
+  margin-bottom: 0;
+}
+
+.amy-way-system .flow-diagram {
+  padding: 12px;
+}
+
+.amy-way-system .flow-diagram svg {
+  max-height: 118px;
+}
+
+.amy-way-system .flow-labels {
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.amy-way-system .flow-labels span {
+  min-height: 28px;
+  padding: 5px 7px;
+  font-size: 0.68rem;
+}
+
+.amy-way-system .step-list,
+.amy-way-system .amy-note {
+  grid-column: 1 / -1;
+}
+
+.amy-way-system .step-list {
+  margin-top: 2px;
+}
+
+.amy-way-system .step-list li {
+  min-height: 112px;
+  font-size: 0.94rem;
+}
+
+.amy-way-system .step-list span {
+  margin-bottom: 8px;
+  font-size: 1.42rem;
+}
+
+.amy-way-system .step-list small {
+  margin-top: 8px;
+  font-size: 0.82rem;
+  line-height: 1.34;
+}
+
+.tool-stack-section .card-grid {
+  gap: 16px;
+}
+
+.tool-stack-section .tool-card {
+  padding: 18px;
+}
+
+.tool-stack-section .tool-card p {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  line-height: 1.42;
+}
+
+.tool-stack-section .tool-card h3 {
+  margin-bottom: 8px;
+}
+
+.tool-stack-section .tool-card .card-topline {
+  margin-bottom: 10px;
+}
+
+.tool-stack-section .tool-card .judgment-note {
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
 .system-node,
 .system-grid span {
   position: relative;
@@ -1668,6 +1750,7 @@ p {
   .brand-hero,
   .split-section,
   .amy-way-preview,
+  .amy-way-system,
   .freebie-callout,
   .signup-panel,
   .cta-band,
@@ -1706,6 +1789,10 @@ p {
   .home-step-list,
   .handoff-flow {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .amy-way-system .step-list {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
 
@@ -1905,6 +1992,48 @@ p {
     grid-template-columns: 1fr;
   }
 
+  .amy-way-system {
+    gap: 18px;
+  }
+
+  .amy-way-system .flow-diagram {
+    padding: 10px;
+  }
+
+  .amy-way-system .flow-diagram svg {
+    max-height: 96px;
+  }
+
+  .amy-way-system .flow-labels {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .amy-way-system .flow-labels span {
+    min-height: 24px;
+    padding: 4px 5px;
+    font-size: 0.62rem;
+    line-height: 1.15;
+  }
+
+  .amy-way-system .step-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .amy-way-system .step-list li {
+    min-height: auto;
+    padding: 14px;
+  }
+
+  .amy-way-system .step-list span {
+    margin-bottom: 8px;
+    font-size: 1.5rem;
+  }
+
+  .amy-way-system .step-list small {
+    margin-top: 6px;
+  }
+
   .footer-grid {
     gap: 22px;
   }
@@ -1996,6 +2125,10 @@ p {
   .mess-list,
   .stacked-points {
     grid-template-columns: 1fr;
+  }
+
+  .tool-stack-section .tool-card {
+    padding: 18px;
   }
 
   .handoff-flow span:not(:last-child)::after {

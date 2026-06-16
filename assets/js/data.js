@@ -280,31 +280,31 @@ export const aiTools = [
     role: "Sounding board and strategist",
     bestFor: "Messy thinking, planning, communication drafts, scripts, and first-pass templates.",
     howAmyUsesIt:
-      "To get the thinking out of her head, pressure-test options, and turn a rough idea into something workable.",
-    humanJudgmentReminder: "It can draft the map. Amy still decides where the road should go.",
+      "I use ChatGPT to get the thinking out of my head, pressure-test options, and turn a rough idea into something workable.",
+    humanJudgmentReminder: "It can draft the map. I still decide where the road should go.",
   },
   {
     name: "Gemini",
     role: "Google Workspace-connected assistant",
     bestFor: "Reusable Gems, role-specific assistants, repeated Google Workspace tasks, and school-life admin.",
     howAmyUsesIt:
-      "To work closer to the places school and life already live: Docs, Sheets, Drive, Gmail, and Calendar.",
-    humanJudgmentReminder: "Workspace access makes review and boundaries even more important.",
+      "I use Gemini when the work lives close to Docs, Sheets, Drive, Gmail, Calendar, or a repeatable Google Workspace process.",
+    humanJudgmentReminder: "Workspace access makes review, boundaries, and context even more important.",
   },
   {
     name: "NotebookLM",
     role: "Source-grounded sense-maker",
     bestFor: "Handbooks, source sets, training materials, and source-based summaries.",
     howAmyUsesIt:
-      "To make sense of a pile of source material before turning it into summaries, questions, or planning notes.",
-    humanJudgmentReminder: "Source-grounded does not mean policy-approved. Humans still verify.",
+      "I use NotebookLM to make sense of source material before turning it into summaries, questions, planning notes, or next steps.",
+    humanJudgmentReminder: "Source-grounded does not automatically mean policy-approved. Humans still verify.",
   },
   {
     name: "Claude",
     role: "Long-form drafter and prototype partner",
     bestFor: "Long-form drafting, polished explanations, artifacts, prototypes, and a different writing feel.",
     howAmyUsesIt:
-      "To shape longer resources, compare tone options, and make a rough explanation easier to hand to another human.",
+      "I use Claude when I want to shape longer resources, compare tone options, or make a rough explanation easier to hand to another human.",
     humanJudgmentReminder: "Good writing still needs context, audience, and final review.",
   },
   {
@@ -312,7 +312,7 @@ export const aiTools = [
     role: "Google tool builder",
     bestFor: "Sheets automation, Forms, Docs, dashboards, and lightweight Google scripts.",
     howAmyUsesIt:
-      "To turn a good idea into a working Google tool when copy-paste has clearly overstayed its welcome.",
+      "I use Apps Script when copy-paste has clearly overstayed its welcome and the work needs to become a working Google tool.",
     humanJudgmentReminder: "Automation should support the process, not hide the decision-making.",
   },
   {
@@ -320,7 +320,7 @@ export const aiTools = [
     role: "Site and product build partner",
     bestFor: "Website building, reusable components, product pages, portfolio structure, and debugging.",
     howAmyUsesIt:
-      "To turn strategy, content architecture, and half-sketched product ideas into polished web pages.",
+      "I use Codex to turn strategy, content architecture, and half-sketched product ideas into polished web pages.",
     humanJudgmentReminder: "A polished build still needs a clear point of view.",
   },
 ];

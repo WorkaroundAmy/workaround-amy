@@ -444,13 +444,15 @@ function renderHow(root) {
       })}
       <p class="large-copy">It is not a replacement for judgment. The work still needs context, care, relationships, ethics, policy awareness, and someone willing to say, “That is technically clever, but not right for this situation.”</p>
     </section>
-    <section>
-      ${sectionHeading({ eyebrow: "The Amy Way", title: "Make the work make sense before you make it fancy." })}
+    <section class="amy-way-system">
+      <div class="amy-way-system-intro">
+        ${sectionHeading({ eyebrow: "The Amy Way", title: "Make the work make sense before you make it fancy." })}
+      </div>
       ${flowDiagram("The Amy Way system flow")}
       <ol class="step-list">${steps.map(([title, text], index) => `<li><span>${index + 1}</span><strong>${title}</strong><small>${text}</small></li>`).join("")}</ol>
       ${amyNote("AI does not remove the thinking. It gives the thinking somewhere to land.")}
     </section>
-    <section>
+    <section class="tool-stack-section">
       ${sectionHeading({ eyebrow: "Tool stack", title: "Everybody has a job. Even the robots." })}
       <div class="card-grid">${aiTools.map(toolStackCard).join("")}</div>
     </section>
