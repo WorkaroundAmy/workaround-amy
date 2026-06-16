@@ -303,6 +303,10 @@ p {
   justify-content: center;
 }
 
+.mobile-home-copy {
+  display: none;
+}
+
 .lede,
 .large-copy {
   max-width: 750px;
@@ -1664,7 +1668,7 @@ p {
   }
 
   section {
-    margin: 72px 0;
+    margin: 52px 0;
   }
 
   .nav-shell {
@@ -1698,8 +1702,9 @@ p {
 
   .hero,
   .brand-hero {
-    gap: 34px;
-    padding-top: 50px;
+    gap: 22px;
+    padding-top: 28px;
+    padding-bottom: 10px;
   }
 
   .hero::before,
@@ -1723,6 +1728,106 @@ p {
   .pathway-card,
   .feature-card {
     min-height: auto;
+  }
+
+  .mobile-home-hidden,
+  .brand-hero .eyebrow,
+  .brand-hero .desktop-home-copy,
+  .brand-hero .philosophy-line,
+  .system-studio .desktop-home-copy,
+  .cta-band .eyebrow,
+  .cta-band p:not(.eyebrow) {
+    display: none;
+  }
+
+  .mobile-home-copy {
+    display: block;
+  }
+
+  .brand-hero {
+    margin-bottom: 38px;
+  }
+
+  .brand-hero .hero-banner {
+    width: min(100%, 560px);
+  }
+
+  .brand-hero h1 {
+    margin-bottom: 12px;
+    font-size: clamp(2.25rem, 10vw, 3.05rem);
+  }
+
+  .hero-subheadline {
+    margin-bottom: 10px;
+    font-size: 1.06rem;
+  }
+
+  .brand-hero .lede {
+    margin-bottom: 0;
+    font-size: 0.98rem;
+    line-height: 1.48;
+  }
+
+  .brand-hero .button-row {
+    margin-top: 18px;
+  }
+
+  .system-studio {
+    margin-top: 0;
+  }
+
+  .system-studio .section-heading,
+  .three-paths .section-heading {
+    margin-bottom: 16px;
+  }
+
+  .system-studio h2,
+  .three-paths h2,
+  .cta-band h2 {
+    font-size: 1.85rem;
+  }
+
+  .about-home-copy {
+    gap: 0;
+  }
+
+  .about-home-copy p {
+    font-size: 0.98rem;
+    line-height: 1.52;
+  }
+
+  .three-paths .section-heading p:not(.eyebrow) {
+    display: none;
+  }
+
+  .pathway-card {
+    padding: 18px;
+  }
+
+  .pathway-card h3 {
+    margin-bottom: 8px;
+  }
+
+  .pathway-card h3::after {
+    margin-top: 10px;
+  }
+
+  .pathway-card p {
+    margin-bottom: 0;
+    font-size: 0.94rem;
+    line-height: 1.45;
+  }
+
+  .pathway-card .text-link {
+    margin-top: 14px;
+  }
+
+  .cta-band {
+    gap: 18px;
+  }
+
+  .cta-band p:not(.eyebrow) {
+    margin-bottom: 0;
   }
 
   .kit-card:nth-child(3n + 2) {
@@ -1787,6 +1892,25 @@ p {
   .proof-signal,
   .handoff-section {
     padding: 20px;
+  }
+
+  .brand-hero {
+    gap: 18px;
+    padding-top: 20px;
+  }
+
+  .brand-hero .hero-banner img {
+    aspect-ratio: 1672 / 880;
+  }
+
+  .brand-hero .button-row,
+  .cta-band .button-row {
+    width: 100%;
+  }
+
+  .brand-hero .button,
+  .cta-band .button {
+    width: 100%;
   }
 
   .flow-diagram {

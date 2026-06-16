@@ -325,7 +325,8 @@ function renderHome(root) {
         <p class="eyebrow">${site.tagline}</p>
         <h1>I turn repeatable chaos into systems that actually work.</h1>
         <p class="hero-subheadline">Practical AI systems for school, work, and life.</p>
-        <p class="lede">Workaround Amy is where I share practical systems for the repeated work that keeps coming back — the planning, communication, dashboards, templates, and decisions that need a better place to live.</p>
+        <p class="lede desktop-home-copy">Workaround Amy is where I share practical systems for the repeated work that keeps coming back — the planning, communication, dashboards, templates, and decisions that need a better place to live.</p>
+        <p class="lede mobile-home-copy">Systems, templates, prompts, and workflows for the repeated work that keeps coming back.</p>
         <p class="philosophy-line">${site.philosophy}</p>
         <div class="button-row">
           <a class="button primary" href="how-i-think.html">Read How I Think</a>
@@ -336,8 +337,9 @@ function renderHome(root) {
     <section class="system-studio">
       ${sectionHeading({ title: "What is Workaround Amy?" })}
       <div class="about-home-copy">
-        <p>Some work keeps coming back. The email gets rewritten. The spreadsheet gets rebuilt. The meeting notes disappear. The decision gets remade. The task lives in someone’s brain because the system around it is not clear enough yet.</p>
-        <p>Workaround Amy is about finding the repeat inside that work and turning it into something reusable — with the right AI support and the human judgment still intact.</p>
+        <p class="desktop-home-copy">Some work keeps coming back. The email gets rewritten. The spreadsheet gets rebuilt. The meeting notes disappear. The decision gets remade. The task lives in someone’s brain because the system around it is not clear enough yet.</p>
+        <p class="desktop-home-copy">Workaround Amy is about finding the repeat inside that work and turning it into something reusable — with the right AI support and the human judgment still intact.</p>
+        <p class="mobile-home-copy">Some work keeps coming back: the emails, spreadsheets, decisions, meetings, and tasks that keep living in someone’s brain. Workaround Amy is about finding the repeat and turning it into something reusable — with AI support and human judgment intact.</p>
       </div>
     </section>
     <section class="three-paths">
@@ -367,7 +369,7 @@ function renderHome(root) {
         })}
       </div>
     </section>
-    <section class="amy-way-preview">
+    <section class="amy-way-preview mobile-home-hidden">
       <div>
         ${sectionHeading({ eyebrow: "Featured", title: "How I think when the work gets messy" })}
         <p class="amy-way-copy">I do not usually start with the tool. I start with the part of the work that is making everyone quietly lose their minds.</p>
@@ -377,7 +379,7 @@ function renderHome(root) {
         ${["Name the chaos.", "Find the repeat.", "Pick the right handoff.", "Clean it up like a human."].map((step, index) => `<li><span>${index + 1}</span>${step}</li>`).join("")}
       </ol>
     </section>
-    <section>
+    <section class="mobile-home-hidden">
       ${sectionHeading({ eyebrow: "Proof of Work", title: "A few systems in progress", text: "Short examples of the practical builds behind Workaround Amy." })}
       <div class="card-grid">${featuredCases.map(homeProofCard).join("")}</div>
       <div class="section-action"><a class="button secondary" href="proof-of-work.html">See Proof of Work</a></div>
