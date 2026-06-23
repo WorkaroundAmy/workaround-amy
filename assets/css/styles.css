@@ -572,6 +572,7 @@ p {
 
 .amy-way-system .step-list li {
   min-height: 112px;
+  padding: 12px;
   font-size: 0.94rem;
 }
 
