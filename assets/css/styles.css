@@ -411,6 +411,16 @@ p {
   border-color: var(--teal);
 }
 
+.disabled-button,
+.disabled-button:hover {
+  cursor: default;
+  color: var(--muted);
+  background: var(--navy-soft);
+  border-color: var(--line);
+  box-shadow: none;
+  transform: none;
+}
+
 .button.small {
   min-height: 38px;
   padding: 9px 12px;

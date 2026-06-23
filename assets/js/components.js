@@ -231,7 +231,8 @@ export function tutorialCard(tutorial) {
 }
 
 export function workflowKitCard(kit) {
-  const priceMarkup = kit.price ? `<span class="price">${kit.price}</span>` : `<span class="price muted-price">Price not posted yet</span>`;
+  const comingSoon = statusClass(kit.status) === "coming-soon";
+  const priceMarkup = kit.price ? `<span class="price">${kit.price}</span>` : `<span class="price muted-price">Coming soon</span>`;
   const targetMarkup = kit.ctaTarget ? ` target="${kit.ctaTarget}" rel="noopener"` : "";
   return `
     <article class="content-card kit-card">
@@ -251,10 +252,12 @@ export function workflowKitCard(kit) {
       <ul class="check-list">${list(kit.includes)}</ul>
       <div class="card-actions">
         ${priceMarkup}
-        <div class="kit-action-buttons">
-          ${kit.secondaryCtaUrl ? `<a class="button secondary small" href="${kit.secondaryCtaUrl}">${kit.secondaryCtaLabel}</a>` : ""}
-          <a class="button secondary small" href="${kit.ctaUrl}"${targetMarkup}>${kit.ctaLabel}</a>
-        </div>
+        ${comingSoon ? `<span class="button secondary small disabled-button" aria-disabled="true">Coming soon</span>` : `
+          <div class="kit-action-buttons">
+            ${kit.secondaryCtaUrl ? `<a class="button secondary small" href="${kit.secondaryCtaUrl}">${kit.secondaryCtaLabel}</a>` : ""}
+            <a class="button secondary small" href="${kit.ctaUrl}"${targetMarkup}>${kit.ctaLabel}</a>
+          </div>
+        `}
       </div>
     </article>`;
 }
