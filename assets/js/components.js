@@ -29,6 +29,7 @@ const logoAsset = "public/images/workaround-amy-logo-tight.png";
 const footerLogoAsset = "public/images/workaround-amy-logo.png";
 const bannerAsset = "public/images/workaround-amy-banner.png";
 const profileAsset = "public/images/workaround-amy-profile.png";
+const bullyingCommandCenterAsset = "public/images/bullying-investigation-command-center.png";
 
 function flowDiagram(label = "chaos to system to forward motion") {
   return `
@@ -238,6 +239,11 @@ export function workflowKitCard(kit) {
         <span>${kit.category}</span>
         ${statusBadge(kit.status)}
       </div>
+      ${kit.imageUrl ? `
+        <figure class="kit-card-image">
+          <img src="${kit.imageUrl}" alt="${kit.imageAlt || kit.title}">
+        </figure>
+      ` : ""}
       <h3>${kit.title}</h3>
       <p><strong>For:</strong> ${kit.audience}</p>
       <p><strong>Pain point:</strong> ${kit.painPoint}</p>
@@ -769,13 +775,18 @@ function renderBullyingInvestigation(root) {
           <a class="button secondary" href="https://workaround7.gumroad.com/l/fzexhv">Get the Full Command Center</a>
         </div>
       </div>
-      <aside class="ladder-hero-panel" aria-label="Bullying investigation workflow summary">
-        <span>Report received</span>
-        <span>Safety check</span>
-        <span>Neutral intake</span>
-        <span>Case file</span>
-        <span>Dashboard follow-up</span>
-      </aside>
+      <div class="ladder-hero-visual">
+        <figure class="product-preview">
+          <img src="${bullyingCommandCenterAsset}" alt="Bullying Investigation Command Center product graphic showing an investigation dashboard on a laptop with case tracking, deadline tracking, documentation, communication support, and secure workflow features.">
+        </figure>
+        <aside class="ladder-hero-panel" aria-label="Bullying investigation workflow summary">
+          <span>Report received</span>
+          <span>Safety check</span>
+          <span>Neutral intake</span>
+          <span>Case file</span>
+          <span>Dashboard follow-up</span>
+        </aside>
+      </div>
     </section>
 
     <section class="product-ladder" aria-label="Free and paid bullying investigation resources">

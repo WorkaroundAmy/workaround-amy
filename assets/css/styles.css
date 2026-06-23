@@ -1147,6 +1147,21 @@ p {
   flex-direction: column;
 }
 
+.kit-card-image {
+  margin: 0 0 16px;
+  overflow: hidden;
+  border: 1px solid rgba(16, 36, 63, 0.12);
+  border-radius: var(--radius);
+  background: var(--navy);
+}
+
+.kit-card-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
 .kit-card .card-actions {
   margin-top: auto;
 }
@@ -1734,7 +1749,7 @@ p {
 
 .ladder-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.46fr);
+  grid-template-columns: minmax(0, 0.86fr) minmax(420px, 0.92fr);
   gap: 34px;
   align-items: center;
   min-height: calc(100vh - 160px);
@@ -1751,10 +1766,33 @@ p {
   max-width: 760px;
 }
 
-.ladder-hero-panel {
+.ladder-hero-visual {
   display: grid;
-  gap: 12px;
-  padding: 24px;
+  gap: 14px;
+  min-width: 0;
+}
+
+.product-preview {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(16, 36, 63, 0.16);
+  border-radius: var(--radius);
+  background: var(--navy);
+  box-shadow: var(--shadow-soft);
+}
+
+.product-preview img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.ladder-hero-panel {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 14px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: rgba(255, 255, 255, 0.94);
@@ -1763,18 +1801,19 @@ p {
 
 .ladder-hero-panel span {
   position: relative;
-  min-height: 50px;
-  padding: 13px 14px 13px 42px;
+  min-height: 42px;
+  padding: 10px 12px 10px 34px;
   border: 1px solid rgba(24, 184, 178, 0.28);
   border-radius: var(--radius);
   background: var(--teal-soft);
   color: var(--navy);
+  font-size: 0.88rem;
   font-weight: 900;
 }
 
 .ladder-hero-panel span::before {
   position: absolute;
-  left: 15px;
+  left: 12px;
   color: var(--teal-deep);
   content: "✓";
 }

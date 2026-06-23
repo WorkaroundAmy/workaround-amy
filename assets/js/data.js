@@ -74,6 +74,8 @@ export const workflowKits = [
     audience: "Principals, assistant principals, deans, and district administrators",
     painPoint: "Bullying reports bring timelines, communication, interviews, documentation, and confidentiality concerns all at once.",
     promise: "A product ladder for bullying investigation support: start with the free first-response prompt, then upgrade to the full guide and system for managing investigations from intake to closure.",
+    imageUrl: "public/images/bullying-investigation-command-center.png",
+    imageAlt: "Bullying Investigation Command Center product graphic with dashboard and school leader workflow features.",
     includes: ["Free: Bullying Investigation First Response Prompt", "Paid: Command Center Google Sheet", "Paid: Quick Start Guide PDF", "Paid: Dashboard and investigation tracker"],
     status: "Product ladder",
     price: "$27 launch / $37 regular",
