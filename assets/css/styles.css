@@ -1065,6 +1065,7 @@ p {
 .status.published,
 .status.free,
 .status.free-starter,
+.status.free-15-minute-guide,
 .status.product-ladder,
 .status.watch {
   color: var(--navy);
