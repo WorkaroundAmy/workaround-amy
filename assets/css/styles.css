@@ -1055,6 +1055,7 @@ p {
 .status.published,
 .status.free,
 .status.free-starter,
+.status.product-ladder,
 .status.watch {
   color: var(--navy);
   background: var(--teal-soft);
@@ -1132,6 +1133,13 @@ p {
   margin-top: 20px;
   padding-top: 16px;
   border-top: 1px solid var(--line);
+}
+
+.kit-action-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .kit-card {
@@ -1724,6 +1732,222 @@ p {
   font-size: 0.85rem;
 }
 
+.ladder-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.46fr);
+  gap: 34px;
+  align-items: center;
+  min-height: calc(100vh - 160px);
+  margin-top: 0;
+  padding: 58px 0 28px;
+}
+
+.ladder-hero h1 {
+  max-width: 840px;
+  margin-bottom: 18px;
+}
+
+.ladder-hero-copy .lede {
+  max-width: 760px;
+}
+
+.ladder-hero-panel {
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: var(--shadow-soft);
+}
+
+.ladder-hero-panel span {
+  position: relative;
+  min-height: 50px;
+  padding: 13px 14px 13px 42px;
+  border: 1px solid rgba(24, 184, 178, 0.28);
+  border-radius: var(--radius);
+  background: var(--teal-soft);
+  color: var(--navy);
+  font-weight: 900;
+}
+
+.ladder-hero-panel span::before {
+  position: absolute;
+  left: 15px;
+  color: var(--teal-deep);
+  content: "✓";
+}
+
+.product-ladder {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.product-card,
+.important-note,
+.problem-band {
+  position: relative;
+  padding: 30px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: var(--shadow-card);
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  content: "";
+  background: var(--teal);
+}
+
+.paid-product::before {
+  background: linear-gradient(90deg, var(--navy), var(--teal));
+}
+
+.product-card h2 {
+  font-size: clamp(1.85rem, 2.4vw, 2.55rem);
+}
+
+.product-card h3 {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.product-card .button {
+  width: fit-content;
+  margin-top: auto;
+}
+
+.product-card .check-list {
+  margin-bottom: 24px;
+}
+
+.product-price {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin: 6px 0 18px;
+}
+
+.product-price strong {
+  color: var(--navy);
+  font-size: 1.22rem;
+}
+
+.product-price span {
+  color: var(--muted);
+  font-size: 0.94rem;
+  font-weight: 800;
+}
+
+.deliverables-note {
+  padding: 14px 16px;
+  border: 1px solid rgba(24, 184, 178, 0.28);
+  border-radius: var(--radius);
+  background: var(--teal-soft);
+}
+
+.problem-band {
+  border-left: 7px solid var(--teal);
+}
+
+.problem-band .section-heading {
+  margin-bottom: 0;
+}
+
+.ladder-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ladder-steps li {
+  min-height: 132px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: var(--shadow-card);
+}
+
+.ladder-steps span {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--teal-deep);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+}
+
+.ladder-steps strong {
+  display: block;
+  color: var(--navy);
+  line-height: 1.25;
+}
+
+.important-note {
+  border-left: 7px solid var(--navy);
+  background:
+    linear-gradient(135deg, rgba(232, 238, 244, 0.72), rgba(255, 255, 255, 0.94)),
+    var(--white);
+}
+
+.important-note h2 {
+  font-family: inherit;
+  font-size: 1.28rem;
+}
+
+.important-note p {
+  max-width: 900px;
+  margin-bottom: 0;
+  color: var(--navy);
+  font-weight: 760;
+}
+
+.faq-list {
+  display: grid;
+  gap: 12px;
+}
+
+.faq-list details {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: 0 8px 22px rgba(16, 36, 63, 0.05);
+}
+
+.faq-list summary {
+  cursor: pointer;
+  padding: 17px 18px;
+  color: var(--navy);
+  font-weight: 900;
+}
+
+.faq-list p {
+  margin: 0;
+  padding: 0 18px 18px;
+}
+
+.ladder-final-cta h2 {
+  margin-bottom: 0;
+}
+
 @media (max-width: 1120px) {
   .brand-logo {
     width: 194px;
@@ -1760,7 +1984,9 @@ p {
   .origin-section,
   .belief-section,
   .why-section,
-  .proof-signal {
+  .proof-signal,
+  .ladder-hero,
+  .product-ladder {
     grid-template-columns: 1fr;
   }
 
@@ -1788,7 +2014,8 @@ p {
 
   .step-list,
   .home-step-list,
-  .handoff-flow {
+  .handoff-flow,
+  .ladder-steps {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1837,7 +2064,8 @@ p {
   }
 
   .hero,
-  .brand-hero {
+  .brand-hero,
+  .ladder-hero {
     gap: 22px;
     padding-top: 28px;
     padding-bottom: 10px;
@@ -1857,7 +2085,8 @@ p {
   .card-grid,
   .card-grid.three,
   .feature-row,
-  .footer-grid {
+  .footer-grid,
+  .ladder-steps {
     grid-template-columns: 1fr;
   }
 
@@ -1906,6 +2135,18 @@ p {
 
   .brand-hero .button-row {
     margin-top: 18px;
+  }
+
+  .ladder-hero {
+    min-height: auto;
+  }
+
+  .ladder-hero h1 {
+    font-size: clamp(2.35rem, 10vw, 3.2rem);
+  }
+
+  .ladder-hero-panel {
+    padding: 18px;
   }
 
   .system-studio {
@@ -2045,6 +2286,14 @@ p {
     flex-direction: column;
   }
 
+  .kit-action-buttons {
+    justify-content: stretch;
+  }
+
+  .kit-action-buttons .button {
+    width: 100%;
+  }
+
   .about-intro {
     padding: 24px;
   }
@@ -2088,7 +2337,11 @@ p {
   .shop-shelf,
   .freebie-callout,
   .proof-signal,
-  .handoff-section {
+  .handoff-section,
+  .product-card,
+  .important-note,
+  .problem-band,
+  .ladder-hero-panel {
     padding: 20px;
   }
 
@@ -2108,7 +2361,9 @@ p {
 
   .brand-hero .button,
   .freebie-action .button,
-  .cta-band .button {
+  .cta-band .button,
+  .ladder-hero .button,
+  .product-card .button {
     width: 100%;
   }
 
@@ -2124,7 +2379,9 @@ p {
   .signal-list li,
   .human-lines,
   .mess-list,
-  .stacked-points {
+  .stacked-points,
+  .product-ladder,
+  .ladder-steps {
     grid-template-columns: 1fr;
   }
 

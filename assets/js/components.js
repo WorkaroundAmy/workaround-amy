@@ -51,7 +51,10 @@ function flowDiagram(label = "chaos to system to forward motion") {
 export function renderHeader(activePath) {
   const nav = routes
     .map(([label, href]) => {
-      const active = href === activePath || (activePath === "" && href === "index.html");
+      const active =
+        href === activePath ||
+        (activePath === "" && href === "index.html") ||
+        (activePath === "bullying-investigation.html" && href === "workflow-kits.html");
       return `<a href="${href}" ${active ? 'aria-current="page"' : ""}>${label}</a>`;
     })
     .join("");
@@ -242,7 +245,10 @@ export function workflowKitCard(kit) {
       <ul class="check-list">${list(kit.includes)}</ul>
       <div class="card-actions">
         ${priceMarkup}
-        <a class="button secondary small" href="${kit.ctaUrl}"${targetMarkup}>${kit.ctaLabel}</a>
+        <div class="kit-action-buttons">
+          ${kit.secondaryCtaUrl ? `<a class="button secondary small" href="${kit.secondaryCtaUrl}">${kit.secondaryCtaLabel}</a>` : ""}
+          <a class="button secondary small" href="${kit.ctaUrl}"${targetMarkup}>${kit.ctaLabel}</a>
+        </div>
       </div>
     </article>`;
 }
@@ -338,6 +344,7 @@ export function renderPage(page) {
   if (page === "everyday") renderEveryday(root);
   if (page === "proof") renderProof(root);
   if (page === "about") renderAbout(root);
+  if (page === "bullying-investigation") renderBullyingInvestigation(root);
 }
 
 function renderHome(root) {
@@ -694,4 +701,141 @@ function renderAbout(root) {
       primary: ["How I Think", "how-i-think.html"],
       secondary: ["See Proof of Work", "proof-of-work.html"],
     })}`;
+}
+
+function renderBullyingInvestigation(root) {
+  const freeIncludes = [
+    "One copy/paste first-response prompt",
+    "Neutral intake framing",
+    "Safety and next-step reminders",
+  ];
+  const commandCenterIncludes = [
+    "Command Center Google Sheet",
+    "Dashboard and Investigation Tracker",
+    "District Settings setup",
+    "Built-in Communication Framework Library",
+    "Auto-generated Google Doc case files",
+    "Copy/paste AI assistant prompts",
+    "Quick Start Guide",
+  ];
+  const steps = [
+    "Complete District Settings",
+    "Create a new investigation",
+    "Open the auto-generated case file",
+    "Copy/paste the stage prompts into your AI assistant",
+    "Paste outputs and administrator notes back into the case file",
+    "Track status and deadlines from the dashboard",
+  ];
+  const faqs = [
+    [
+      "Do I need Gemini to use this?",
+      "No. Gemini works well inside Google Workspace, but the system is built around copy/paste prompts and administrator review.",
+    ],
+    [
+      "Can I use ChatGPT or Claude instead?",
+      "Yes. You can copy the prompts into ChatGPT, Claude, or another approved AI assistant your district allows.",
+    ],
+    [
+      "What if my district does not have templates?",
+      "You can still use the workflow to organize intake, notes, communication drafts, deadlines, and case documentation.",
+    ],
+    [
+      "Does this decide whether bullying occurred?",
+      "No. The tool helps organize the investigation process. Determinations stay with the administrator and district policy.",
+    ],
+    [
+      "Can I customize the sheet?",
+      "Yes. The Command Center is designed to be adapted to your district language, stages, and local procedures.",
+    ],
+    [
+      "What do buyers receive?",
+      "Buyers receive two deliverables: the Command Center Google Sheet and the Quick Start Guide PDF.",
+    ],
+    [
+      "Is this legal advice?",
+      "No. This is an administrator workflow tool, not legal advice or a replacement for district guidance.",
+    ],
+  ];
+
+  root.innerHTML = `
+    <section class="ladder-hero">
+      <div class="ladder-hero-copy">
+        <p class="eyebrow">Workaround Amy</p>
+        <h1>Before You Hit Reply to a Bullying Report</h1>
+        <p class="lede">Start with the free first-response prompt. Upgrade to the full Command Center when you're ready for a complete guide and system to manage the entire investigation from intake to closure.</p>
+        <p class="hero-for">Practical systems for busy school leaders.</p>
+        <div class="button-row">
+          <a class="button primary" href="https://workaround7.gumroad.com/l/BullyingReportFirstResponsePrompt">Get the Free First Response Prompt</a>
+          <a class="button secondary" href="https://workaround7.gumroad.com/l/fzexhv">Get the Full Command Center</a>
+        </div>
+      </div>
+      <aside class="ladder-hero-panel" aria-label="Bullying investigation workflow summary">
+        <span>Report received</span>
+        <span>Safety check</span>
+        <span>Neutral intake</span>
+        <span>Case file</span>
+        <span>Dashboard follow-up</span>
+      </aside>
+    </section>
+
+    <section class="product-ladder" aria-label="Free and paid bullying investigation resources">
+      <article class="product-card free-product" id="free-kit">
+        <p class="eyebrow">Free starter</p>
+        <h2>Free: Bullying Investigation First Response Prompt</h2>
+        <p>A practical copy/paste prompt to help school leaders slow down, stay neutral, identify immediate safety concerns, and organize the first response after a bullying report is received.</p>
+        <h3>Includes</h3>
+        <ul class="check-list">${list(freeIncludes)}</ul>
+        <a class="button primary" href="https://workaround7.gumroad.com/l/BullyingReportFirstResponsePrompt">Get the Free Prompt</a>
+      </article>
+      <article class="product-card paid-product" id="command-center">
+        <p class="eyebrow">Full system</p>
+        <h2>Bullying Investigation Command Center</h2>
+        <p class="product-price"><strong>$27 launch price</strong><span>$37 regular price</span></p>
+        <p>A full guide and Google Sheet-based investigation system that helps school leaders manage bullying investigations from intake to closure with a dashboard, tracker, district settings, built-in communication frameworks, auto-generated case files, and copy/paste AI assistant prompts.</p>
+        <p class="deliverables-note"><strong>Deliverables:</strong> Command Center Google Sheet and Quick Start Guide PDF.</p>
+        <h3>What's Included</h3>
+        <ul class="check-list">${list(commandCenterIncludes)}</ul>
+        <a class="button primary" href="https://workaround7.gumroad.com/l/fzexhv">Get the Full Command Center</a>
+      </article>
+    </section>
+
+    <section class="problem-band">
+      ${sectionHeading({
+        title: "Bullying investigations are too important to manage from memory.",
+        text: "When a bullying report lands in your inbox, there are timelines to track, families to communicate with, students to interview, documentation to manage, and confidentiality to protect. The free prompt helps with the first response. The full Command Center gives school leaders a complete workflow so they are not starting from scratch every time.",
+      })}
+    </section>
+
+    <section>
+      ${sectionHeading({ eyebrow: "How it works", title: "A clear workflow from intake to closure." })}
+      <ol class="ladder-steps">${steps.map((step, index) => `<li><span>${index + 1}</span><strong>${step}</strong></li>`).join("")}</ol>
+    </section>
+
+    <section class="important-note">
+      <h2>Important Note</h2>
+      <p>This tool supports administrator workflow and organization. It does not make determinations, replace district policy, replace administrator judgment, or provide legal advice.</p>
+    </section>
+
+    <section>
+      ${sectionHeading({ eyebrow: "FAQ", title: "Common questions" })}
+      <div class="faq-list">
+        ${faqs.map(([question, answer]) => `
+          <details>
+            <summary>${question}</summary>
+            <p>${answer}</p>
+          </details>
+        `).join("")}
+      </div>
+    </section>
+
+    <section class="cta-band ladder-final-cta">
+      <div>
+        <p class="eyebrow">Next step</p>
+        <h2>Ready to stop starting every investigation from scratch?</h2>
+      </div>
+      <div class="button-row">
+        <a class="button primary" href="https://workaround7.gumroad.com/l/BullyingReportFirstResponsePrompt">Get the Free Prompt</a>
+        <a class="button secondary" href="https://workaround7.gumroad.com/l/fzexhv">Get the Full Command Center</a>
+      </div>
+    </section>`;
 }

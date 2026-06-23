@@ -68,6 +68,21 @@ export const tutorials = [
 
 export const workflowKits = [
   {
+    id: "bullying-investigation-command-center",
+    title: "Bullying Investigation Prompt + Command Center",
+    category: "School Systems",
+    audience: "Principals, assistant principals, deans, and district administrators",
+    painPoint: "Bullying reports bring timelines, communication, interviews, documentation, and confidentiality concerns all at once.",
+    promise: "A product ladder for bullying investigation support: start with the free first-response prompt, then upgrade to the full guide and system for managing investigations from intake to closure.",
+    includes: ["Free: Bullying Investigation First Response Prompt", "Paid: Command Center Google Sheet", "Paid: Quick Start Guide PDF", "Paid: Dashboard and investigation tracker"],
+    status: "Product ladder",
+    price: "$27 launch / $37 regular",
+    ctaLabel: "Get the Full Command Center",
+    ctaUrl: "https://workaround7.gumroad.com/l/fzexhv",
+    secondaryCtaLabel: "Get the Free Prompt",
+    secondaryCtaUrl: "https://workaround7.gumroad.com/l/BullyingReportFirstResponsePrompt",
+  },
+  {
     id: "workflow-idea-starter-kit",
     title: "Workflow Idea Starter Kit",
     category: "Systems Thinking",
