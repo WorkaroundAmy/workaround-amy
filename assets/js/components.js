@@ -142,24 +142,6 @@ export function ctaSection({
     </section>`;
 }
 
-export function emailSignup() {
-  return `
-    <section class="signup-panel" id="signup" aria-labelledby="signup-title">
-      <div>
-        <p class="eyebrow">Freebie placeholder</p>
-        <h2 id="signup-title">Get the first starter kit when it is ready.</h2>
-        <p>No checkout or email platform is connected yet. This spot is ready for the future freebie, newsletter, or kit list.</p>
-      </div>
-      <form class="signup-form">
-        <label for="email">Email address</label>
-        <div>
-          <input id="email" name="email" type="email" placeholder="amy@example.com" disabled>
-          <button class="button primary" type="button" disabled>Coming soon</button>
-        </div>
-      </form>
-    </section>`;
-}
-
 export function pullQuote(text) {
   return `<figure class="pull-quote"><blockquote>${text}</blockquote></figure>`;
 }
@@ -509,7 +491,6 @@ function renderBuild(root) {
       ${sectionHeading({ title: "Starter tutorials", text: "Video spaces are placeholders for now. The point will be practical build-alongs, not polished magic tricks." })}
       <div class="card-grid">${tutorials.map(tutorialCard).join("")}</div>
     </section>
-    ${emailSignup()}
     ${ctaSection({ primary: ["Browse Workflow Kits", "workflow-kits.html"], secondary: ["See Proof of Work", "proof-of-work.html"] })}`;
 }
 
@@ -531,7 +512,6 @@ function renderKits(root) {
       ${amyNote("If the system only works because one person remembers everything, it is not really a system yet.")}
     </section>
     <section><div class="card-grid">${workflowKits.map(workflowKitCard).join("")}</div></section>
-    ${emailSignup()}
     ${ctaSection({ primary: ["Build With Me", "build-with-me.html"], secondary: ["School Systems", "school-systems.html"] })}`;
 }
 
