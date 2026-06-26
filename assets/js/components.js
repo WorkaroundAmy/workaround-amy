@@ -276,12 +276,25 @@ function workflowGroupSection({ id, title, text, kits }) {
 function ladderPreviewCard(item) {
   const targetMarkup = item.target ? ` target="${item.target}" rel="noopener"` : "";
   const actions = item.actions || [{ label: item.cta, href: item.href, target: item.target, isPaid: item.isPaid }];
+  const imageMarkup = item.images?.length
+    ? `<div class="ladder-product-images">
+        ${item.images
+          .map(
+            (image) => `
+              <figure>
+                <img src="${image.src}" alt="${image.alt}">
+              </figure>`
+          )
+          .join("")}
+      </div>`
+    : "";
   return `
     <article class="product-card ladder-preview-card ${item.isPaid ? "paid-product" : ""}">
       <div class="card-topline">
         <span>${item.label}</span>
         ${statusBadge(item.status)}
       </div>
+      ${imageMarkup}
       <h3>${item.title}</h3>
       <p>${item.text}</p>
       <ul class="check-list">${list(item.includes)}</ul>
@@ -546,6 +559,20 @@ function renderSchoolWorkflows(root) {
             "Coming soon: PBIS Discipline Referral Starter Kit",
             "Coming soon: PBIS Behavior Referral + Dashboard System",
           ],
+          images: [
+            {
+              src: "public/images/pbis-referral-readiness-checklist.png",
+              alt: "PBIS Referral System Readiness Checklist product graphic.",
+            },
+            {
+              src: "public/images/pbis-discipline-referral-starter-kit.png",
+              alt: "PBIS Discipline Referral Starter Kit product graphic showing a referral form, spreadsheet, and email workflow.",
+            },
+            {
+              src: "public/images/pbis-behavior-referral-dashboard-system.png",
+              alt: "PBIS Behavior Referral and Dashboard System product graphic showing dashboard and referral log views.",
+            },
+          ],
           actions: [
             { label: "Download Free Checklist", href: "https://workaround7.gumroad.com/l/hlhhk", target: "_blank" },
             { label: "Starter Kit Coming Soon" },
@@ -570,6 +597,12 @@ function renderSchoolWorkflows(root) {
             "Paid: Command Center Google Sheet",
             "Paid: Quick Start Guide PDF",
             "Paid: Dashboard and investigation tracker",
+          ],
+          images: [
+            {
+              src: "public/images/bullying-investigation-command-center.png",
+              alt: "Bullying Investigation Command Center product graphic with dashboard and investigation workflow features.",
+            },
           ],
           actions: [
             { label: "Get the Free Prompt", href: "https://workaround7.gumroad.com/l/BullyingReportFirstResponsePrompt" },

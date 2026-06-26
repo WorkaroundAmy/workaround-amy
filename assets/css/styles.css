@@ -1378,6 +1378,29 @@ p {
   min-height: 100%;
 }
 
+.ladder-product-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.ladder-product-images figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(16, 36, 63, 0.14);
+  border-radius: var(--radius);
+  background: var(--navy);
+  box-shadow: 0 10px 26px rgba(16, 36, 63, 0.08);
+}
+
+.ladder-product-images img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
 .ladder-preview-card h3 {
   margin-top: 0;
   margin-bottom: 12px;
