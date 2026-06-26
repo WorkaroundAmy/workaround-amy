@@ -1448,11 +1448,7 @@ p {
 }
 
 .ladder-product-section .ladder-card-actions {
-  margin-top: auto;
-}
-
-.ladder-product-section .button {
-  margin-top: 0;
+  margin-top: 12px;
 }
 
 .ladder-card-intro {
@@ -1490,6 +1486,11 @@ p {
 
 .ladder-card-actions .button {
   width: fit-content;
+  margin-top: 0;
+}
+
+.product-card .ladder-product-section .button,
+.product-card .ladder-card-actions .button {
   margin-top: 0;
 }
 
