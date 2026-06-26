@@ -204,6 +204,38 @@ export const workflowKits = [
   },
 ];
 
+export const pbisBehaviorSystems = [
+  {
+    id: "pbis-referral-readiness-checklist",
+    label: "Free Resource",
+    title: "PBIS Referral System Readiness Checklist",
+    description:
+      "A free 4-part audit to help school leaders review staff referral clarity, admin follow-up, data quality, and PBIS team use.",
+    ctaLabel: "Download Free Checklist",
+    ctaUrl: "/downloads/pbis-referral-readiness-checklist.pdf",
+    ctaTarget: "_blank",
+    cardType: "free",
+  },
+  {
+    id: "pbis-discipline-referral-starter-kit",
+    label: "Coming Soon",
+    title: "PBIS Discipline Referral Starter Kit",
+    description:
+      "A ready-to-use Google Forms + Google Sheets referral workflow for behavior documentation, admin follow-up, submission/edit links, email notifications, homeroom mapping, system checks, and test-data cleanup.",
+    ctaLabel: "Coming Soon",
+    cardType: "starter",
+  },
+  {
+    id: "pbis-behavior-referral-dashboard-system",
+    label: "Coming Soon",
+    title: "PBIS Behavior Referral + Dashboard System",
+    description:
+      "The complete referral workflow plus a PBIS dashboard with snapshot data, TFI evidence, action items, support flags, staff calibration flags, behavior graphs, and a recent referral log.",
+    ctaLabel: "Coming Soon",
+    cardType: "dashboard",
+  },
+];
+
 export const caseStudies = [
   {
     id: "principal-command-center",

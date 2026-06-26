@@ -412,7 +412,9 @@ p {
 }
 
 .disabled-button,
-.disabled-button:hover {
+.disabled-button:hover,
+.button:disabled,
+.button:disabled:hover {
   cursor: default;
   color: var(--muted);
   background: var(--navy-soft);
@@ -1064,6 +1066,7 @@ p {
 
 .status.published,
 .status.free,
+.status.free-resource,
 .status.free-starter,
 .status.free-15-minute-guide,
 .status.product-ladder,
@@ -1337,6 +1340,68 @@ p {
 
 .shop-shelf .section-heading {
   margin-bottom: 0;
+}
+
+.pbis-systems-section {
+  padding: 30px;
+  border: 1px solid rgba(24, 184, 178, 0.28);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(16, 36, 63, 0.04), rgba(223, 248, 246, 0.66)),
+    var(--white);
+  box-shadow: var(--shadow-card);
+}
+
+.pbis-systems-section .section-heading {
+  margin-bottom: 10px;
+}
+
+.pbis-supporting-line {
+  max-width: 760px;
+  margin-bottom: 24px;
+  color: var(--navy);
+  font-weight: 850;
+}
+
+.pbis-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.pbis-workflow-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background:
+    linear-gradient(180deg, #ffffff, rgba(238, 245, 244, 0.52)),
+    var(--white);
+}
+
+.pbis-workflow-card.free {
+  border-color: rgba(24, 184, 178, 0.46);
+  box-shadow: 0 16px 38px rgba(16, 36, 63, 0.1);
+}
+
+.pbis-workflow-card.free::before {
+  opacity: 1;
+}
+
+.pbis-workflow-card.starter {
+  background:
+    linear-gradient(180deg, #ffffff, rgba(232, 238, 244, 0.66)),
+    var(--white);
+}
+
+.pbis-workflow-card.dashboard {
+  background:
+    linear-gradient(180deg, #ffffff, rgba(244, 238, 229, 0.68)),
+    var(--white);
+}
+
+.pbis-workflow-card .card-actions {
+  justify-content: flex-start;
+  margin-top: auto;
 }
 
 .freebie-callout {
@@ -2022,6 +2087,7 @@ p {
 
   .card-grid,
   .card-grid.three,
+  .pbis-card-grid,
   .feature-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2098,6 +2164,7 @@ p {
 
   .card-grid,
   .card-grid.three,
+  .pbis-card-grid,
   .feature-row,
   .footer-grid,
   .ladder-steps {
@@ -2347,6 +2414,7 @@ p {
   .pull-quote,
   .system-studio,
   .shop-shelf,
+  .pbis-systems-section,
   .freebie-callout,
   .proof-signal,
   .handoff-section,
@@ -2373,6 +2441,7 @@ p {
 
   .brand-hero .button,
   .freebie-action .button,
+  .pbis-workflow-card .button,
   .cta-band .button,
   .ladder-hero .button,
   .product-card .button {
