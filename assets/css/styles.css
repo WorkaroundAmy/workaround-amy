@@ -1347,6 +1347,7 @@ p {
 }
 
 .featured-ladder {
+  overflow: hidden;
   padding: 30px;
   border: 1px solid rgba(24, 184, 178, 0.28);
   border-radius: var(--radius);
@@ -1376,6 +1377,7 @@ p {
 
 .ladder-preview-card {
   min-height: 100%;
+  min-width: 0;
 }
 
 .ladder-product-images {
@@ -1449,22 +1451,27 @@ p {
   margin-top: auto;
 }
 
-.ladder-preview-card h3 {
+.ladder-card-intro {
+  max-width: 980px;
+  margin-bottom: 20px;
+}
+
+.ladder-card-intro h3 {
   margin-top: 0;
   margin-bottom: 12px;
-  font-size: clamp(1.75rem, 2.5vw, 2.7rem);
-  line-height: 1.02;
+  overflow-wrap: anywhere;
+  font-size: clamp(1.9rem, 3vw, 3.05rem);
+  line-height: 1.04;
 }
 
 .ladder-preview-card p {
   font-size: 0.96rem;
 }
 
-.ladder-preview-card > p {
-  max-width: 1040px;
+.ladder-card-intro p {
   color: var(--navy);
   font-size: 1.05rem;
-  font-weight: 780;
+  font-weight: 760;
   line-height: 1.5;
 }
 

@@ -323,8 +323,10 @@ function ladderPreviewCard(item) {
         ${statusBadge(item.status)}
       </div>
       ${imageMarkup}
-      <h3>${item.title}</h3>
-      <p>${item.text}</p>
+      <div class="ladder-card-intro">
+        <h3>${item.title}</h3>
+        <p>${item.text}</p>
+      </div>
       ${sectionMarkup || `
         <ul class="check-list">${list(item.includes)}</ul>
         <div class="ladder-card-actions">
