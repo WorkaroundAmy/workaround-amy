@@ -9,7 +9,8 @@ const routes = [
   ["Home", "index.html"],
   ["How I Think", "how-i-think.html"],
   ["Build With Me", "build-with-me.html"],
-  ["Workflow Kits", "workflow-kits.html"],
+  ["School Workflows", "school-systems.html"],
+  ["Everyday Workflows", "everyday-systems.html"],
   ["About", "about.html"],
 ];
 
@@ -48,8 +49,8 @@ export function renderHeader(activePath) {
       const active =
         href === activePath ||
         (activePath === "" && href === "index.html") ||
-        (["school-systems.html", "everyday-systems.html", "proof-of-work.html"].includes(activePath) && href === "workflow-kits.html") ||
-        (activePath === "bullying-investigation.html" && href === "workflow-kits.html");
+        (activePath === "proof-of-work.html" && href === "school-systems.html") ||
+        (activePath === "bullying-investigation.html" && href === "school-systems.html");
       return `<a href="${href}" ${active ? 'aria-current="page"' : ""}>${label}</a>`;
     })
     .join("");
@@ -83,12 +84,13 @@ export function renderFooter() {
         <div>
           <h2>Explore</h2>
           <a href="how-i-think.html">How I Think</a>
-          <a href="workflow-kits.html">Workflow Kits</a>
+          <a href="school-systems.html">School Workflows</a>
+          <a href="everyday-systems.html">Everyday Workflows</a>
         </div>
         <div>
           <h2>Built For</h2>
-          <a href="workflow-kits.html#school-workflows">Workflows for School Systems</a>
-          <a href="workflow-kits.html#everyday-workflows">Workflows for Everyday Systems</a>
+          <a href="school-systems.html">Workflows for School Systems</a>
+          <a href="everyday-systems.html">Workflows for Everyday Systems</a>
           <a href="build-with-me.html">Build With Me</a>
         </div>
       </div>
@@ -119,7 +121,7 @@ export function ctaSection({
   title = site.signature,
   text = "Start with one repeatable mess. Turn it into something you can reuse.",
   primary = ["Build With Me", "build-with-me.html"],
-  secondary = ["Browse Workflow Kits", "workflow-kits.html"],
+  secondary = ["School Workflows", "school-systems.html"],
 } = {}) {
   return `
     <section class="cta-band">
@@ -257,7 +259,7 @@ function compactKitCard(kit) {
       </div>
       <h3>${kit.title}</h3>
       <p>${kit.promise}</p>
-      <a class="button secondary small" href="workflow-kits.html">Explore Workflow Kits</a>
+      <a class="button secondary small" href="${kit.category.startsWith("School") ? "school-systems.html" : "everyday-systems.html"}">Explore workflows</a>
     </article>`;
 }
 
@@ -279,7 +281,9 @@ export function renderPage(page) {
   if (page === "home") renderHome(root);
   if (page === "how") renderHow(root);
   if (page === "build") renderBuild(root);
-  if (["kits", "school", "everyday", "proof"].includes(page)) renderKits(root);
+  if (page === "kits") renderKitsLanding(root);
+  if (page === "school" || page === "proof") renderSchoolWorkflows(root);
+  if (page === "everyday") renderEverydayWorkflows(root);
   if (page === "about") renderAbout(root);
   if (page === "bullying-investigation") renderBullyingInvestigation(root);
 }
@@ -299,7 +303,7 @@ function renderHome(root) {
         <p class="philosophy-line">${site.philosophy}</p>
         <div class="button-row">
           <a class="button primary" href="how-i-think.html">Read How I Think</a>
-          <a class="button secondary" href="workflow-kits.html">Browse Workflow Kits</a>
+          <a class="button secondary" href="school-systems.html">Browse School Workflows</a>
         </div>
       </div>
     </section>
@@ -322,13 +326,13 @@ function renderHome(root) {
         ${pathwayCard({
           title: "Workflows for School Systems",
           text: "Tools and workflows for school operations, communication, meetings, and the invisible work of leadership.",
-          href: "workflow-kits.html#school-workflows",
+          href: "school-systems.html",
           label: "Browse school workflows",
         })}
         ${pathwayCard({
           title: "Workflows for Everyday Systems",
           text: "Practical systems for life admin, family logistics, planning, projects, and the recurring work that follows you home.",
-          href: "workflow-kits.html#everyday-workflows",
+          href: "everyday-systems.html",
           label: "Browse everyday workflows",
         })}
         ${pathwayCard({
@@ -353,7 +357,7 @@ function renderHome(root) {
       title: site.signature,
       text: "Start with one repeatable mess. Turn it into something you can reuse.",
       primary: ["Read How I Think", "how-i-think.html"],
-      secondary: ["Explore Workflow Kits", "workflow-kits.html"],
+      secondary: ["School Workflows", "school-systems.html"],
     })}`;
 }
 
@@ -411,7 +415,7 @@ function renderHow(root) {
     </section>
     ${ctaSection({
       primary: ["Build With Me", "build-with-me.html"],
-      secondary: ["Browse Workflow Kits", "workflow-kits.html"],
+      secondary: ["School Workflows", "school-systems.html"],
     })}`;
 }
 
@@ -429,10 +433,23 @@ function renderBuild(root) {
       ${sectionHeading({ title: "Starter tutorials", text: "Video spaces are placeholders for now. The point will be practical build-alongs, not polished magic tricks." })}
       <div class="card-grid">${tutorials.map(tutorialCard).join("")}</div>
     </section>
-    ${ctaSection({ primary: ["Browse Workflow Kits", "workflow-kits.html"], secondary: ["How I Think", "how-i-think.html"] })}`;
+    ${ctaSection({ primary: ["School Workflows", "school-systems.html"], secondary: ["Everyday Workflows", "everyday-systems.html"] })}`;
 }
 
-function renderKits(root) {
+function workflowShelfIntro() {
+  return `
+    <section class="shop-shelf">
+      <div class="system-window-top"><span></span><span></span><span></span></div>
+      ${sectionHeading({
+        eyebrow: "From the messy middle",
+        title: "Clean starters for messy recurring work.",
+        text: "Each workflow explains who it is for, what problem it solves, what is included, and where the human review belongs.",
+      })}
+      ${amyNote("If the system only works because one person remembers everything, it is not really a system yet.")}
+    </section>`;
+}
+
+function renderKitsLanding(root) {
   const schoolKits = workflowKits.filter((kit) => kit.category.startsWith("School"));
   const everydayKits = workflowKits.filter((kit) => !kit.category.startsWith("School"));
 
@@ -440,31 +457,65 @@ function renderKits(root) {
     ${pageIntro({
       eyebrow: "Workflow shelf",
       title: "Workflow Kits",
-      subtitle: "Reusable starters for the work you do not want to rebuild from scratch.",
-      text: "These are not theoretical template packs. They come from the kind of repeated work that makes you say, “There has to be a better way to do this.”",
+      subtitle: "Two shelves for the work you do not want to rebuild from scratch.",
+      text: "Choose the lane that fits the repeatable chaos in front of you.",
     })}
-    <section class="shop-shelf">
-      <div class="system-window-top"><span></span><span></span><span></span></div>
-      ${sectionHeading({
-        eyebrow: "From the messy middle",
-        title: "Clean starters for messy recurring work.",
-        text: "Each kit explains who it is for, what problem it solves, what is included, and where the human review belongs.",
-      })}
-      ${amyNote("If the system only works because one person remembers everything, it is not really a system yet.")}
-    </section>
+    <section>
+      <div class="card-grid two">
+        ${pathwayCard({
+          title: "Workflows for School Systems",
+          text: `${schoolKits.length} practical tools for school operations, communication, behavior systems, meetings, and leadership workflows.`,
+          href: "school-systems.html",
+          label: "Browse school workflows",
+        })}
+        ${pathwayCard({
+          title: "Workflows for Everyday Systems",
+          text: `${everydayKits.length} reusable starters for everyday planning, life admin, product packaging, portfolio work, and repeatable chaos outside the school day.`,
+          href: "everyday-systems.html",
+          label: "Browse everyday workflows",
+        })}
+      </div>
+    </section>`;
+}
+
+function renderSchoolWorkflows(root) {
+  const schoolKits = workflowKits.filter((kit) => kit.category.startsWith("School"));
+
+  root.innerHTML = `
+    ${pageIntro({
+      eyebrow: "Workflow shelf",
+      title: "Workflows for School Systems",
+      subtitle: "Reusable starters for school operations, communication, behavior systems, meetings, and the recurring work of leadership.",
+      text: "These workflows are practical school-leader tools, not corporate template packs. Start with what is ready now, and watch the coming-soon ladders fill in as the systems are finished.",
+    })}
+    ${workflowShelfIntro()}
     ${workflowGroupSection({
       id: "school-workflows",
-      title: "Workflows for School Systems",
-      text: "Practical tools for school operations, communication, behavior systems, meetings, and the recurring work of leadership.",
+      title: "School workflow kits",
+      text: "Behavior, communication, meetings, operations, and leadership systems built from the repeated work schools actually carry.",
       kits: schoolKits,
     })}
+    ${ctaSection({ primary: ["Everyday Workflows", "everyday-systems.html"], secondary: ["Build With Me", "build-with-me.html"] })}`;
+}
+
+function renderEverydayWorkflows(root) {
+  const everydayKits = workflowKits.filter((kit) => !kit.category.startsWith("School"));
+
+  root.innerHTML = `
+    ${pageIntro({
+      eyebrow: "Workflow shelf",
+      title: "Workflows for Everyday Systems",
+      subtitle: "Reusable starters for life admin, product packaging, portfolio work, and repeatable chaos outside the school day.",
+      text: "These workflows use the same practical systems thinking, pointed at the recurring work that follows you home or sits inside your next project.",
+    })}
+    ${workflowShelfIntro()}
     ${workflowGroupSection({
       id: "everyday-workflows",
-      title: "Workflows for Everyday Systems",
-      text: "Reusable starters for everyday planning, life admin, product packaging, portfolio work, and repeatable chaos outside the school day.",
+      title: "Everyday workflow kits",
+      text: "Planning, packaging, portfolio, and life-admin systems for work that needs a reusable container.",
       kits: everydayKits,
     })}
-    ${ctaSection({ primary: ["Browse Workflow Kits", "workflow-kits.html"], secondary: ["Build With Me", "build-with-me.html"] })}`;
+    ${ctaSection({ primary: ["School Workflows", "school-systems.html"], secondary: ["Build With Me", "build-with-me.html"] })}`;
 }
 
 function renderAbout(root) {
@@ -575,7 +626,7 @@ function renderAbout(root) {
     ${pullQuote("A good system does not remove the human part. It protects it.")}
     ${ctaSection({
       primary: ["How I Think", "how-i-think.html"],
-      secondary: ["Browse Workflow Kits", "workflow-kits.html"],
+      secondary: ["School Workflows", "school-systems.html"],
     })}`;
 }
 

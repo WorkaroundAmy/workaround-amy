@@ -785,6 +785,10 @@ p {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.card-grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .content-card,
 .pathway-card,
 .feature-card,
@@ -2025,6 +2029,7 @@ p {
 
   .card-grid,
   .card-grid.three,
+  .card-grid.two,
   .feature-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2101,6 +2106,7 @@ p {
 
   .card-grid,
   .card-grid.three,
+  .card-grid.two,
   .feature-row,
   .footer-grid,
   .ladder-steps {
