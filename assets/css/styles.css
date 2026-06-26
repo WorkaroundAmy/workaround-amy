@@ -1401,6 +1401,54 @@ p {
   object-fit: cover;
 }
 
+.ladder-product-sections {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.ladder-product-section {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.ladder-product-section figure {
+  margin: 0 0 14px;
+  overflow: hidden;
+  border: 1px solid rgba(16, 36, 63, 0.14);
+  border-radius: var(--radius);
+  background: var(--navy);
+}
+
+.ladder-product-section img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.ladder-product-section h4 {
+  margin: 0 0 10px;
+  color: var(--navy);
+  font-size: 1.02rem;
+  line-height: 1.15;
+}
+
+.ladder-product-section p {
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.ladder-product-section .ladder-card-actions {
+  margin-top: auto;
+}
+
 .ladder-preview-card h3 {
   margin-top: 0;
   margin-bottom: 12px;
@@ -2109,6 +2157,7 @@ p {
   .card-grid.three,
   .card-grid.two,
   .featured-ladder-grid,
+  .ladder-product-sections,
   .feature-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2187,6 +2236,7 @@ p {
   .card-grid.three,
   .card-grid.two,
   .featured-ladder-grid,
+  .ladder-product-sections,
   .feature-row,
   .footer-grid,
   .ladder-steps {

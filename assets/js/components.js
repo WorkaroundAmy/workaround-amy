@@ -276,6 +276,34 @@ function workflowGroupSection({ id, title, text, kits }) {
 function ladderPreviewCard(item) {
   const targetMarkup = item.target ? ` target="${item.target}" rel="noopener"` : "";
   const actions = item.actions || [{ label: item.cta, href: item.href, target: item.target, isPaid: item.isPaid }];
+  const sectionMarkup = item.sections?.length
+    ? `<div class="ladder-product-sections">
+        ${item.sections
+          .map(
+            (section) => `
+              <section class="ladder-product-section">
+                <figure>
+                  <img src="${section.image.src}" alt="${section.image.alt}">
+                </figure>
+                <div class="card-topline">
+                  <span>${section.label}</span>
+                  ${statusBadge(section.status)}
+                </div>
+                <h4>${section.title}</h4>
+                <p><strong>Pain point:</strong> ${section.painPoint}</p>
+                <p><strong>Solution:</strong> ${section.solution}</p>
+                <div class="ladder-card-actions">
+                  ${
+                    section.href
+                      ? `<a class="button primary small" href="${section.href}"${section.target ? ` target="${section.target}" rel="noopener"` : ""}>${section.cta}</a>`
+                      : `<span class="button secondary small disabled-button" aria-disabled="true">${section.cta}</span>`
+                  }
+                </div>
+              </section>`
+          )
+          .join("")}
+      </div>`
+    : "";
   const imageMarkup = item.images?.length
     ? `<div class="ladder-product-images">
         ${item.images
@@ -297,16 +325,18 @@ function ladderPreviewCard(item) {
       ${imageMarkup}
       <h3>${item.title}</h3>
       <p>${item.text}</p>
-      <ul class="check-list">${list(item.includes)}</ul>
-      <div class="ladder-card-actions">
-        ${actions
-          .map((action, index) => {
-            const actionTarget = action.target ? ` target="${action.target}" rel="noopener"` : targetMarkup;
-            if (!action.href) return `<span class="button secondary small disabled-button" aria-disabled="true">${action.label}</span>`;
-            return `<a class="button ${index === 0 && !action.isPaid ? "primary" : "secondary"} small" href="${action.href}"${actionTarget}>${action.label}</a>`;
-          })
-          .join("")}
-      </div>
+      ${sectionMarkup || `
+        <ul class="check-list">${list(item.includes)}</ul>
+        <div class="ladder-card-actions">
+          ${actions
+            .map((action, index) => {
+              const actionTarget = action.target ? ` target="${action.target}" rel="noopener"` : targetMarkup;
+              if (!action.href) return `<span class="button secondary small disabled-button" aria-disabled="true">${action.label}</span>`;
+              return `<a class="button ${index === 0 && !action.isPaid ? "primary" : "secondary"} small" href="${action.href}"${actionTarget}>${action.label}</a>`;
+            })
+            .join("")}
+        </div>
+      `}
     </article>`;
 }
 
@@ -554,29 +584,45 @@ function renderSchoolWorkflows(root) {
           status: "Product ladder",
           title: "PBIS Referral System Readiness Checklist",
           text: "Start with a free 4-part audit to review staff referral clarity, admin follow-up, data quality, and PBIS team use. The full referral workflow and dashboard systems are coming soon.",
-          includes: [
-            "Available now: PBIS Referral System Readiness Checklist",
-            "Coming soon: PBIS Discipline Referral Starter Kit",
-            "Coming soon: PBIS Behavior Referral + Dashboard System",
-          ],
-          images: [
+          sections: [
             {
-              src: "public/images/pbis-referral-readiness-checklist.png",
-              alt: "PBIS Referral System Readiness Checklist product graphic.",
+              label: "Free Resource",
+              status: "Available now",
+              title: "PBIS Referral System Readiness Checklist",
+              painPoint: "Behavior referrals get harder to use when staff expectations, admin follow-up, data quality, and PBIS team routines are not clearly aligned.",
+              solution: "A free 4-part audit to help school leaders review staff referral clarity, admin follow-up, data quality, and PBIS team use before adding another form, dashboard, or workflow.",
+              image: {
+                src: "public/images/pbis-referral-readiness-checklist.png",
+                alt: "PBIS Referral System Readiness Checklist product graphic.",
+              },
+              cta: "Download Free Checklist",
+              href: "https://workaround7.gumroad.com/l/hlhhk",
+              target: "_blank",
             },
             {
-              src: "public/images/pbis-discipline-referral-starter-kit.png",
-              alt: "PBIS Discipline Referral Starter Kit product graphic showing a referral form, spreadsheet, and email workflow.",
+              label: "Starter Kit",
+              status: "Coming soon",
+              title: "PBIS Discipline Referral Starter Kit",
+              painPoint: "Behavior documentation, admin follow-up, edit links, notifications, and system checks can scatter across too many places.",
+              solution: "A ready-to-use Google Forms + Google Sheets referral workflow for behavior documentation, admin follow-up, submission/edit links, email notifications, homeroom mapping, system checks, and test-data cleanup.",
+              image: {
+                src: "public/images/pbis-discipline-referral-starter-kit.png",
+                alt: "PBIS Discipline Referral Starter Kit product graphic showing a referral form, spreadsheet, and email workflow.",
+              },
+              cta: "Coming soon",
             },
             {
-              src: "public/images/pbis-behavior-referral-dashboard-system.png",
-              alt: "PBIS Behavior Referral and Dashboard System product graphic showing dashboard and referral log views.",
+              label: "Dashboard System",
+              status: "Coming soon",
+              title: "PBIS Behavior Referral + Dashboard System",
+              painPoint: "Referral data is hard to act on when evidence, action items, support flags, behavior graphs, and recent logs are not in one usable view.",
+              solution: "The complete referral workflow plus a PBIS dashboard with snapshot data, TFI evidence, action items, support flags, staff calibration flags, behavior graphs, and a recent referral log.",
+              image: {
+                src: "public/images/pbis-behavior-referral-dashboard-system.png",
+                alt: "PBIS Behavior Referral and Dashboard System product graphic showing dashboard and referral log views.",
+              },
+              cta: "Coming soon",
             },
-          ],
-          actions: [
-            { label: "Download Free Checklist", href: "https://workaround7.gumroad.com/l/hlhhk", target: "_blank" },
-            { label: "Starter Kit Coming Soon" },
-            { label: "Dashboard Coming Soon" },
           ],
         },
       ],
