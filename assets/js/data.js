@@ -212,7 +212,7 @@ export const pbisBehaviorSystems = [
     description:
       "A free 4-part audit to help school leaders review staff referral clarity, admin follow-up, data quality, and PBIS team use.",
     ctaLabel: "Download Free Checklist",
-    ctaUrl: "/downloads/pbis-referral-readiness-checklist.pdf",
+    ctaUrl: "https://workaround7.gumroad.com/l/hlhhk",
     ctaTarget: "_blank",
     cardType: "free",
   },
