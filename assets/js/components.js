@@ -273,6 +273,38 @@ function workflowGroupSection({ id, title, text, kits }) {
     </section>`;
 }
 
+function ladderPreviewCard(item) {
+  const targetMarkup = item.target ? ` target="${item.target}" rel="noopener"` : "";
+  const actions = item.actions || [{ label: item.cta, href: item.href, target: item.target, isPaid: item.isPaid }];
+  return `
+    <article class="product-card ladder-preview-card ${item.isPaid ? "paid-product" : ""}">
+      <div class="card-topline">
+        <span>${item.label}</span>
+        ${statusBadge(item.status)}
+      </div>
+      <h3>${item.title}</h3>
+      <p>${item.text}</p>
+      <ul class="check-list">${list(item.includes)}</ul>
+      <div class="ladder-card-actions">
+        ${actions
+          .map((action, index) => {
+            const actionTarget = action.target ? ` target="${action.target}" rel="noopener"` : targetMarkup;
+            if (!action.href) return `<span class="button secondary small disabled-button" aria-disabled="true">${action.label}</span>`;
+            return `<a class="button ${index === 0 && !action.isPaid ? "primary" : "secondary"} small" href="${action.href}"${actionTarget}>${action.label}</a>`;
+          })
+          .join("")}
+      </div>
+    </article>`;
+}
+
+function featuredLadderSection({ id, eyebrow, title, text, cards }) {
+  return `
+    <section class="featured-ladder" id="${id}">
+      ${sectionHeading({ eyebrow, title, text })}
+      <div class="featured-ladder-grid ${cards.length === 1 ? "single" : cards.length === 2 ? "two" : ""}">${cards.map(ladderPreviewCard).join("")}</div>
+    </section>`;
+}
+
 export function renderPage(page) {
   const root = document.querySelector("main[data-page]");
   if (!root) return;
@@ -482,7 +514,13 @@ function renderKitsLanding(root) {
 }
 
 function renderSchoolWorkflows(root) {
-  const schoolKits = workflowKits.filter((kit) => kit.category.startsWith("School"));
+  const featuredIds = [
+    "pbis-referral-readiness-checklist",
+    "pbis-discipline-referral-starter-kit",
+    "pbis-behavior-referral-dashboard-system",
+    "bullying-investigation-command-center",
+  ];
+  const schoolKits = workflowKits.filter((kit) => kit.category.startsWith("School") && !featuredIds.includes(kit.id));
 
   root.innerHTML = `
     ${pageIntro({
@@ -492,9 +530,58 @@ function renderSchoolWorkflows(root) {
       text: "These workflows are practical school-leader tools, not corporate template packs. Start with what is ready now, and watch the coming-soon ladders fill in as the systems are finished.",
     })}
     ${workflowShelfIntro()}
+    ${featuredLadderSection({
+      id: "pbis-behavior-systems",
+      eyebrow: "Product ladder",
+      title: "PBIS Behavior Systems",
+      text: "Start with the free readiness checklist, then come back soon for the full referral workflow and dashboard systems.",
+      cards: [
+        {
+          label: "PBIS Behavior Systems",
+          status: "Product ladder",
+          title: "PBIS Referral System Readiness Checklist",
+          text: "Start with a free 4-part audit to review staff referral clarity, admin follow-up, data quality, and PBIS team use. The full referral workflow and dashboard systems are coming soon.",
+          includes: [
+            "Available now: PBIS Referral System Readiness Checklist",
+            "Coming soon: PBIS Discipline Referral Starter Kit",
+            "Coming soon: PBIS Behavior Referral + Dashboard System",
+          ],
+          actions: [
+            { label: "Download Free Checklist", href: "https://workaround7.gumroad.com/l/hlhhk", target: "_blank" },
+            { label: "Starter Kit Coming Soon" },
+            { label: "Dashboard Coming Soon" },
+          ],
+        },
+      ],
+    })}
+    ${featuredLadderSection({
+      id: "bullying-investigation-systems",
+      eyebrow: "Product ladder",
+      title: "Bullying Investigation Systems",
+      text: "Start with the free first-response prompt, then upgrade to the full Command Center when you need the complete investigation workflow.",
+      cards: [
+        {
+          label: "Bullying Investigation Systems",
+          status: "Product ladder",
+          title: "Bullying Investigation Prompt + Command Center",
+          text: "Start with the free first-response prompt, then upgrade to the full guide and Google Sheet-based Command Center when you need a complete investigation workflow from intake to closure.",
+          includes: [
+            "Free: Bullying Investigation First Response Prompt",
+            "Paid: Command Center Google Sheet",
+            "Paid: Quick Start Guide PDF",
+            "Paid: Dashboard and investigation tracker",
+          ],
+          actions: [
+            { label: "Get the Free Prompt", href: "https://workaround7.gumroad.com/l/BullyingReportFirstResponsePrompt" },
+            { label: "Get the Full Command Center", href: "https://workaround7.gumroad.com/l/fzexhv", isPaid: true },
+          ],
+          isPaid: true,
+        },
+      ],
+    })}
     ${workflowGroupSection({
       id: "school-workflows",
-      title: "School workflow kits",
+      title: "More school workflow kits",
       text: "Behavior, communication, meetings, operations, and leadership systems built from the repeated work schools actually carry.",
       kits: schoolKits,
     })}

@@ -1346,6 +1346,61 @@ p {
   margin-bottom: 0;
 }
 
+.featured-ladder {
+  padding: 30px;
+  border: 1px solid rgba(24, 184, 178, 0.28);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(232, 238, 244, 0.62), rgba(223, 248, 246, 0.72)),
+    var(--white);
+  box-shadow: var(--shadow-card);
+}
+
+.featured-ladder .section-heading {
+  margin-bottom: 22px;
+}
+
+.featured-ladder-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.featured-ladder-grid.single {
+  grid-template-columns: 1fr;
+}
+
+.featured-ladder-grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ladder-preview-card {
+  min-height: 100%;
+}
+
+.ladder-preview-card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.ladder-preview-card p {
+  font-size: 0.96rem;
+}
+
+.ladder-card-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.ladder-card-actions .button {
+  width: fit-content;
+  margin-top: 0;
+}
+
 .freebie-callout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 0.48fr);
@@ -2030,6 +2085,7 @@ p {
   .card-grid,
   .card-grid.three,
   .card-grid.two,
+  .featured-ladder-grid,
   .feature-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2107,6 +2163,7 @@ p {
   .card-grid,
   .card-grid.three,
   .card-grid.two,
+  .featured-ladder-grid,
   .feature-row,
   .footer-grid,
   .ladder-steps {
@@ -2356,6 +2413,7 @@ p {
   .pull-quote,
   .system-studio,
   .shop-shelf,
+  .featured-ladder,
   .freebie-callout,
   .proof-signal,
   .handoff-section,
