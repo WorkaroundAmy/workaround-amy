@@ -1,9 +1,5 @@
 import {
   aiTools,
-  caseStudies,
-  everydayCategories,
-  schoolCategories,
-  skills,
   site,
   tutorials,
   workflowKits,
@@ -14,9 +10,6 @@ const routes = [
   ["How I Think", "how-i-think.html"],
   ["Build With Me", "build-with-me.html"],
   ["Workflow Kits", "workflow-kits.html"],
-  ["School Systems", "school-systems.html"],
-  ["Everyday Systems", "everyday-systems.html"],
-  ["Proof of Work", "proof-of-work.html"],
   ["About", "about.html"],
 ];
 
@@ -55,6 +48,7 @@ export function renderHeader(activePath) {
       const active =
         href === activePath ||
         (activePath === "" && href === "index.html") ||
+        (["school-systems.html", "everyday-systems.html", "proof-of-work.html"].includes(activePath) && href === "workflow-kits.html") ||
         (activePath === "bullying-investigation.html" && href === "workflow-kits.html");
       return `<a href="${href}" ${active ? 'aria-current="page"' : ""}>${label}</a>`;
     })
@@ -90,12 +84,11 @@ export function renderFooter() {
           <h2>Explore</h2>
           <a href="how-i-think.html">How I Think</a>
           <a href="workflow-kits.html">Workflow Kits</a>
-          <a href="proof-of-work.html">Proof of Work</a>
         </div>
         <div>
           <h2>Built For</h2>
-          <a href="school-systems.html">School Systems</a>
-          <a href="everyday-systems.html">Everyday Systems</a>
+          <a href="workflow-kits.html#school-workflows">Workflows for School Systems</a>
+          <a href="workflow-kits.html#everyday-workflows">Workflows for Everyday Systems</a>
           <a href="build-with-me.html">Build With Me</a>
         </div>
       </div>
@@ -244,24 +237,6 @@ export function workflowKitCard(kit) {
     </article>`;
 }
 
-export function caseStudyCard(study) {
-  return `
-    <article class="content-card case-card">
-      <div class="card-topline">
-        <span>Case study</span>
-        ${statusBadge(study.status)}
-      </div>
-      <h3>${study.title}</h3>
-      ${study.realWorldMess ? `<p class="mess-line"><strong>Real-world mess:</strong> ${study.realWorldMess}</p>` : ""}
-      <p><strong>Problem:</strong> ${study.problem}</p>
-      <p><strong>System built:</strong> ${study.afterState}</p>
-      <p><strong>What changed:</strong> ${study.beforeState}</p>
-      <p><strong>Tools:</strong> ${study.tools.join(", ")}</p>
-      <p><strong>Skills:</strong> ${study.skills.join(", ")}</p>
-      <p class="recruiter-summary">${study.recruiterSummary}</p>
-    </article>`;
-}
-
 export function toolStackCard(tool) {
   return `
     <article class="content-card tool-card">
@@ -270,30 +245,6 @@ export function toolStackCard(tool) {
       <p><strong>Best for:</strong> ${tool.bestFor}</p>
       <p>${tool.howAmyUsesIt}</p>
       <p class="judgment-note">${tool.humanJudgmentReminder}</p>
-    </article>`;
-}
-
-function compactCaseCard(study) {
-  return `
-    <article class="content-card compact-card">
-      <div class="card-topline"><span>Proof of work</span></div>
-      <h3>${study.title}</h3>
-      ${study.realWorldMess ? `<p class="mess-line"><strong>Real-world mess:</strong> ${study.realWorldMess}</p>` : ""}
-      <p><strong>Problem:</strong> ${study.problem}</p>
-      <p><strong>System built:</strong> ${study.afterState}</p>
-      <p><strong>Tools:</strong> ${study.tools.join(", ")}</p>
-      <a class="button secondary small" href="proof-of-work.html">See Proof of Work</a>
-    </article>`;
-}
-
-function homeProofCard(study) {
-  return `
-    <article class="content-card compact-card home-proof-card">
-      <div class="card-topline"><span>Proof of work</span></div>
-      <h3>${study.title}</h3>
-      <p><strong>Problem:</strong> ${study.problem}</p>
-      <p><strong>System:</strong> ${study.afterState}</p>
-      <p><strong>Tools:</strong> ${study.tools.join(", ")}</p>
     </article>`;
 }
 
@@ -310,14 +261,12 @@ function compactKitCard(kit) {
     </article>`;
 }
 
-export function categoryCard(category) {
+function workflowGroupSection({ id, title, text, kits }) {
   return `
-    <article class="content-card category-card">
-      <h3>${category.title}</h3>
-      <p>${category.description}</p>
-      <ul>${list(category.examples)}</ul>
-      ${category.note ? `<p class="responsible-note">${category.note}</p>` : ""}
-    </article>`;
+    <section class="workflow-group" id="${id}">
+      ${sectionHeading({ title, text })}
+      <div class="card-grid">${kits.map(workflowKitCard).join("")}</div>
+    </section>`;
 }
 
 export function renderPage(page) {
@@ -330,18 +279,12 @@ export function renderPage(page) {
   if (page === "home") renderHome(root);
   if (page === "how") renderHow(root);
   if (page === "build") renderBuild(root);
-  if (page === "kits") renderKits(root);
-  if (page === "school") renderSchool(root);
-  if (page === "everyday") renderEveryday(root);
-  if (page === "proof") renderProof(root);
+  if (["kits", "school", "everyday", "proof"].includes(page)) renderKits(root);
   if (page === "about") renderAbout(root);
   if (page === "bullying-investigation") renderBullyingInvestigation(root);
 }
 
 function renderHome(root) {
-  const featuredCases = ["principal-command-center", "staff-committee-assignment", "pbis-command-center"]
-    .map((id) => caseStudies.find((study) => study.id === id))
-    .filter(Boolean);
   root.innerHTML = `
     <section class="brand-hero">
       <figure class="hero-banner">
@@ -356,7 +299,7 @@ function renderHome(root) {
         <p class="philosophy-line">${site.philosophy}</p>
         <div class="button-row">
           <a class="button primary" href="how-i-think.html">Read How I Think</a>
-          <a class="button secondary" href="proof-of-work.html">See Proof of Work</a>
+          <a class="button secondary" href="workflow-kits.html">Browse Workflow Kits</a>
         </div>
       </div>
     </section>
@@ -373,20 +316,20 @@ function renderHome(root) {
       ${sectionHeading({
         eyebrow: "Choose your path",
         title: "Start where your chaos lives.",
-        text: "Three clean doors into the work, depending on what you need next.",
+        text: "Browse the workflow shelf by the kind of system you need next.",
       })}
       <div class="card-grid three">
         ${pathwayCard({
-          title: "School Systems",
+          title: "Workflows for School Systems",
           text: "Tools and workflows for school operations, communication, meetings, and the invisible work of leadership.",
-          href: "school-systems.html",
-          label: "Explore school systems",
+          href: "workflow-kits.html#school-workflows",
+          label: "Browse school workflows",
         })}
         ${pathwayCard({
-          title: "Everyday Systems",
+          title: "Workflows for Everyday Systems",
           text: "Practical systems for life admin, family logistics, planning, projects, and the recurring work that follows you home.",
-          href: "everyday-systems.html",
-          label: "Explore everyday systems",
+          href: "workflow-kits.html#everyday-workflows",
+          label: "Browse everyday workflows",
         })}
         ${pathwayCard({
           title: "Build With Me",
@@ -405,11 +348,6 @@ function renderHome(root) {
       <ol class="home-step-list">
         ${["Name the chaos.", "Find the repeat.", "Pick the right handoff.", "Clean it up like a human."].map((step, index) => `<li><span>${index + 1}</span>${step}</li>`).join("")}
       </ol>
-    </section>
-    <section class="mobile-home-hidden">
-      ${sectionHeading({ eyebrow: "Proof of Work", title: "A few systems in progress", text: "Short examples of the practical builds behind Workaround Amy." })}
-      <div class="card-grid">${featuredCases.map(homeProofCard).join("")}</div>
-      <div class="section-action"><a class="button secondary" href="proof-of-work.html">See Proof of Work</a></div>
     </section>
     ${ctaSection({
       title: site.signature,
@@ -478,7 +416,7 @@ function renderHow(root) {
 }
 
 function renderBuild(root) {
-  const categories = ["Systems Thinking", "School Leader Systems", "Everyday Systems", "AI Tool Stack Tutorials", "Build-With-Me Projects"];
+  const categories = ["Systems Thinking", "School Workflows", "Everyday Workflows", "AI Tool Stack Tutorials", "Build-With-Me Projects"];
   root.innerHTML = `
     ${pageIntro({
       eyebrow: "Tutorial hub",
@@ -491,10 +429,13 @@ function renderBuild(root) {
       ${sectionHeading({ title: "Starter tutorials", text: "Video spaces are placeholders for now. The point will be practical build-alongs, not polished magic tricks." })}
       <div class="card-grid">${tutorials.map(tutorialCard).join("")}</div>
     </section>
-    ${ctaSection({ primary: ["Browse Workflow Kits", "workflow-kits.html"], secondary: ["See Proof of Work", "proof-of-work.html"] })}`;
+    ${ctaSection({ primary: ["Browse Workflow Kits", "workflow-kits.html"], secondary: ["How I Think", "how-i-think.html"] })}`;
 }
 
 function renderKits(root) {
+  const schoolKits = workflowKits.filter((kit) => kit.category.startsWith("School"));
+  const everydayKits = workflowKits.filter((kit) => !kit.category.startsWith("School"));
+
   root.innerHTML = `
     ${pageIntro({
       eyebrow: "Workflow shelf",
@@ -511,73 +452,19 @@ function renderKits(root) {
       })}
       ${amyNote("If the system only works because one person remembers everything, it is not really a system yet.")}
     </section>
-    <section><div class="card-grid">${workflowKits.map(workflowKitCard).join("")}</div></section>
-    ${ctaSection({ primary: ["Build With Me", "build-with-me.html"], secondary: ["School Systems", "school-systems.html"] })}`;
-}
-
-function renderSchool(root) {
-  root.innerHTML = `
-    ${pageIntro({
-      eyebrow: "Education systems",
-      title: "School Systems",
-      subtitle: "Practical systems for the recurring work of school leadership.",
-      text: "These examples focus on organization, communication, documentation, team routines, and responsible implementation. No confidential student information, private district content, or copyrighted district materials belong here.",
+    ${workflowGroupSection({
+      id: "school-workflows",
+      title: "Workflows for School Systems",
+      text: "Practical tools for school operations, communication, behavior systems, meetings, and the recurring work of leadership.",
+      kits: schoolKits,
     })}
-    <section class="responsible-use">
-      <h2>Responsible-use note</h2>
-      <p>Special education, bullying, behavior, discipline, and compliance-related systems are organizational supports only. They must be customized to district policy, applicable law, and approved tools. Nothing here is legal advice, a compliance determination, or a substitute for required professional judgment.</p>
-    </section>
-    <section>
-      ${sectionHeading({ title: "School system categories" })}
-      <div class="card-grid">${schoolCategories.map(categoryCard).join("")}</div>
-    </section>
-    ${ctaSection({ primary: ["Browse Workflow Kits", "workflow-kits.html"], secondary: ["See Proof of Work", "proof-of-work.html"] })}`;
-}
-
-function renderEveryday(root) {
-  root.innerHTML = `
-    ${pageIntro({
-      eyebrow: "Real life systems",
-      title: "Everyday Systems",
-      subtitle: "Because school is not the only place where repeatable chaos shows up.",
-      text: "These systems bring the same practical thinking to life admin, family logistics, home projects, travel, meals, and the tiny tasks that drain attention before breakfast.",
+    ${workflowGroupSection({
+      id: "everyday-workflows",
+      title: "Workflows for Everyday Systems",
+      text: "Reusable starters for everyday planning, life admin, product packaging, portfolio work, and repeatable chaos outside the school day.",
+      kits: everydayKits,
     })}
-    <section>
-      ${sectionHeading({ title: "Everyday system categories" })}
-      <div class="card-grid">${everydayCategories.map(categoryCard).join("")}</div>
-    </section>
     ${ctaSection({ primary: ["Browse Workflow Kits", "workflow-kits.html"], secondary: ["Build With Me", "build-with-me.html"] })}`;
-}
-
-function renderProof(root) {
-  root.innerHTML = `
-    ${pageIntro({
-      eyebrow: "Proof of work",
-      title: "Proof of Work",
-      subtitle: "AI-enabled systems design, documented clearly.",
-      text: "These are not portfolio filler. They are the practical builds underneath Workaround Amy: the choices, constraints, cleanup, and human judgment behind the tool.",
-    })}
-    <section class="proof-signal">
-      <div>
-        <p class="eyebrow">Portfolio signal</p>
-        <h2>Operational mess, translated into usable systems.</h2>
-      </div>
-      <ul class="signal-list">
-        <li><strong>Diagnose</strong><span>Find the real repeat underneath the noise.</span></li>
-        <li><strong>Design</strong><span>Build a system people can actually use on a Tuesday.</span></li>
-        <li><strong>Document</strong><span>Make the thinking legible to teams, recruiters, and future Amy.</span></li>
-      </ul>
-    </section>
-    <section>
-      ${sectionHeading({ title: "Case studies" })}
-      <div class="card-grid">${caseStudies.map(caseStudyCard).join("")}</div>
-    </section>
-    ${pullQuote("The point is not to make AI impressive. The point is to make the work less absurd.")}
-    <section>
-      ${sectionHeading({ eyebrow: "Skills demonstrated", title: "The work behind the work" })}
-      <ul class="pill-list">${skills.map((skill) => `<li>${skill}</li>`).join("")}</ul>
-    </section>
-    ${ctaSection({ primary: ["How I Think", "how-i-think.html"], secondary: ["Build With Me", "build-with-me.html"] })}`;
 }
 
 function renderAbout(root) {
@@ -688,7 +575,7 @@ function renderAbout(root) {
     ${pullQuote("A good system does not remove the human part. It protects it.")}
     ${ctaSection({
       primary: ["How I Think", "how-i-think.html"],
-      secondary: ["See Proof of Work", "proof-of-work.html"],
+      secondary: ["Browse Workflow Kits", "workflow-kits.html"],
     })}`;
 }
 
