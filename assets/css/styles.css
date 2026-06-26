@@ -1407,7 +1407,7 @@ p {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
-  margin-top: 18px;
+  margin-top: 8px;
 }
 
 .ladder-product-section {
@@ -1451,9 +1451,13 @@ p {
   margin-top: auto;
 }
 
+.ladder-product-section .button {
+  margin-top: 0;
+}
+
 .ladder-card-intro {
   max-width: 980px;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 .ladder-card-intro h3 {
