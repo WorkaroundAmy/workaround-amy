@@ -122,6 +122,7 @@ export function ctaSection({
   text = "Start with one repeatable mess. Turn it into something you can reuse.",
   primary = ["Build With Me", "build-with-me.html"],
   secondary = ["School Workflows", "school-systems.html"],
+  tertiary = null,
 } = {}) {
   return `
     <section class="cta-band">
@@ -133,6 +134,7 @@ export function ctaSection({
       <div class="button-row">
         <a class="button primary" href="${primary[1]}">${primary[0]}</a>
         <a class="button secondary" href="${secondary[1]}">${secondary[0]}</a>
+        ${tertiary ? `<a class="button secondary" href="${tertiary[1]}">${tertiary[0]}</a>` : ""}
       </div>
     </section>`;
 }
@@ -416,6 +418,7 @@ function renderHow(root) {
     ${ctaSection({
       primary: ["Build With Me", "build-with-me.html"],
       secondary: ["School Workflows", "school-systems.html"],
+      tertiary: ["Everyday Workflows", "everyday-systems.html"],
     })}`;
 }
 
