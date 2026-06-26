@@ -1452,10 +1452,20 @@ p {
 .ladder-preview-card h3 {
   margin-top: 0;
   margin-bottom: 12px;
+  font-size: clamp(1.75rem, 2.5vw, 2.7rem);
+  line-height: 1.02;
 }
 
 .ladder-preview-card p {
   font-size: 0.96rem;
+}
+
+.ladder-preview-card > p {
+  max-width: 1040px;
+  color: var(--navy);
+  font-size: 1.05rem;
+  font-weight: 780;
+  line-height: 1.5;
 }
 
 .ladder-card-actions {

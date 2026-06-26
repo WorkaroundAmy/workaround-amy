@@ -582,8 +582,8 @@ function renderSchoolWorkflows(root) {
         {
           label: "PBIS Behavior Systems",
           status: "Product ladder",
-          title: "PBIS Referral System Readiness Checklist",
-          text: "Start with a free 4-part audit to review staff referral clarity, admin follow-up, data quality, and PBIS team use. The full referral workflow and dashboard systems are coming soon.",
+          title: "Behavior Referral System",
+          text: "A three-tier behavior workflow ladder: start with the free readiness checklist, build the foundation with the referral form and follow-up workflow, then add the dashboard system for PBIS team review, support flags, action items, and usable behavior data.",
           sections: [
             {
               label: "Free Resource",
