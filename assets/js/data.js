@@ -68,6 +68,20 @@ export const tutorials = [
 
 export const workflowKits = [
   {
+    id: "pbis-referral-readiness-checklist",
+    title: "PBIS Referral System Readiness Checklist",
+    category: "School Systems",
+    audience: "School leaders and PBIS teams",
+    painPoint: "Behavior referrals get harder to use when staff expectations, admin follow-up, data quality, and PBIS team routines are not clearly aligned.",
+    promise: "A free 4-part audit to help school leaders spot the places where the referral system needs more clarity before adding another form, dashboard, or workflow.",
+    includes: ["Staff referral clarity", "Admin follow-up routines", "Data quality checks", "PBIS team use"],
+    status: "Free Resource",
+    price: "Free",
+    ctaLabel: "Download Free Checklist",
+    ctaUrl: "https://workaround7.gumroad.com/l/hlhhk",
+    ctaTarget: "_blank",
+  },
+  {
     id: "bullying-investigation-command-center",
     title: "Bullying Investigation Prompt + Command Center",
     category: "School Systems",
@@ -164,19 +178,6 @@ export const workflowKits = [
     ctaUrl: "#",
   },
   {
-    id: "pbis-command-center-lite",
-    title: "PBIS Command Center Lite",
-    category: "School Systems",
-    audience: "School leadership teams",
-    painPoint: "Positive behavior systems fall apart when data, routines, and next steps live in different places.",
-    promise: "Create a lightweight command center for rituals, data checks, and team action.",
-    includes: ["Dashboard outline", "Meeting prompts", "Data view ideas", "Implementation notes"],
-    status: "Coming soon",
-    price: "",
-    ctaLabel: "Coming soon",
-    ctaUrl: "#",
-  },
-  {
     id: "product-packaging-kit",
     title: "Product Packaging Kit",
     category: "Portfolio and Products",
@@ -204,38 +205,6 @@ export const workflowKits = [
   },
 ];
 
-export const pbisBehaviorSystems = [
-  {
-    id: "pbis-referral-readiness-checklist",
-    label: "Free Resource",
-    title: "PBIS Referral System Readiness Checklist",
-    description:
-      "A free 4-part audit to help school leaders review staff referral clarity, admin follow-up, data quality, and PBIS team use.",
-    ctaLabel: "Download Free Checklist",
-    ctaUrl: "https://workaround7.gumroad.com/l/hlhhk",
-    ctaTarget: "_blank",
-    cardType: "free",
-  },
-  {
-    id: "pbis-discipline-referral-starter-kit",
-    label: "Coming Soon",
-    title: "PBIS Discipline Referral Starter Kit",
-    description:
-      "A ready-to-use Google Forms + Google Sheets referral workflow for behavior documentation, admin follow-up, submission/edit links, email notifications, homeroom mapping, system checks, and test-data cleanup.",
-    ctaLabel: "Coming Soon",
-    cardType: "starter",
-  },
-  {
-    id: "pbis-behavior-referral-dashboard-system",
-    label: "Coming Soon",
-    title: "PBIS Behavior Referral + Dashboard System",
-    description:
-      "The complete referral workflow plus a PBIS dashboard with snapshot data, TFI evidence, action items, support flags, staff calibration flags, behavior graphs, and a recent referral log.",
-    ctaLabel: "Coming Soon",
-    cardType: "dashboard",
-  },
-];
-
 export const caseStudies = [
   {
     id: "principal-command-center",
@@ -248,7 +217,7 @@ export const caseStudies = [
     skills: ["Operations design", "dashboard design", "implementation planning", "AI workflow design"],
     recruiterSummary:
       "Translated complex school leadership work into a visible operating system with clearer routines, ownership, and decision support. Why it matters: leaders get more usable signal without pretending the system can replace relationships.",
-    relatedWorkflowId: "pbis-command-center-lite",
+    relatedWorkflowId: "pbis-referral-readiness-checklist",
     status: "Drafting",
   },
   {
@@ -276,7 +245,7 @@ export const caseStudies = [
     skills: ["Data-informed decision support", "dashboard design", "training/enablement"],
     recruiterSummary:
       "Created an implementation-minded dashboard concept for school teams with responsible, policy-aware AI support. Why it matters: teams can connect patterns, routines, and next actions instead of treating data as a separate chore.",
-    relatedWorkflowId: "pbis-command-center-lite",
+    relatedWorkflowId: "pbis-referral-readiness-checklist",
     status: "Drafting",
   },
   {

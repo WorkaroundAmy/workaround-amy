@@ -2,7 +2,6 @@ import {
   aiTools,
   caseStudies,
   everydayCategories,
-  pbisBehaviorSystems,
   schoolCategories,
   skills,
   site,
@@ -243,42 +242,6 @@ export function workflowKitCard(kit) {
         `}
       </div>
     </article>`;
-}
-
-function pbisWorkflowCard(item, index) {
-  const targetMarkup = item.ctaTarget ? ` target="${item.ctaTarget}" rel="noopener"` : "";
-  const stepLabel = index === 0 ? "Step 1" : index === 1 ? "Foundation" : "Full system";
-  return `
-    <article class="content-card pbis-workflow-card ${item.cardType}">
-      <div class="card-topline">
-        <span>${stepLabel}</span>
-        ${statusBadge(item.label)}
-      </div>
-      <h3>${item.title}</h3>
-      <p>${item.description}</p>
-      <div class="card-actions">
-        ${
-          item.ctaUrl
-            ? `<a class="button primary small" href="${item.ctaUrl}"${targetMarkup} aria-label="${item.ctaLabel}: ${item.title}">${item.ctaLabel}</a>`
-            : `<button class="button secondary small disabled-button" type="button" disabled aria-label="${item.title} coming soon">${item.ctaLabel}</button>`
-        }
-      </div>
-    </article>`;
-}
-
-function pbisBehaviorSystemsSection() {
-  return `
-    <section class="pbis-systems-section" id="pbis-behavior-systems">
-      ${sectionHeading({
-        eyebrow: "PBIS workflow kits",
-        title: "PBIS Behavior Systems",
-        text: "Practical, principal-created tools to help school leaders move from scattered behavior documentation to clearer referral workflows, stronger follow-up, and more usable PBIS data.",
-      })}
-      <p class="pbis-supporting-line">Start with the free readiness checklist, then come back soon for the full referral workflow and dashboard systems.</p>
-      <div class="pbis-card-grid">
-        ${pbisBehaviorSystems.map(pbisWorkflowCard).join("")}
-      </div>
-    </section>`;
 }
 
 export function caseStudyCard(study) {
@@ -548,7 +511,6 @@ function renderKits(root) {
       })}
       ${amyNote("If the system only works because one person remembers everything, it is not really a system yet.")}
     </section>
-    ${pbisBehaviorSystemsSection()}
     <section><div class="card-grid">${workflowKits.map(workflowKitCard).join("")}</div></section>
     ${ctaSection({ primary: ["Build With Me", "build-with-me.html"], secondary: ["School Systems", "school-systems.html"] })}`;
 }
