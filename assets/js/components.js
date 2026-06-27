@@ -648,8 +648,8 @@ function renderSchoolWorkflows(root) {
               painPoint: "Bullying reports bring urgent timelines, family communication, safety concerns, and confidentiality questions all at once.",
               solution: "A practical copy/paste prompt to help school leaders slow down, stay neutral, identify immediate safety concerns, and organize the first response after a bullying report is received.",
               image: {
-                src: "public/images/bullying-investigation-command-center.png",
-                alt: "Bullying Investigation Command Center product graphic with bullying investigation workflow features.",
+                src: "public/images/bullying-investigation-first-response-prompt.png",
+                alt: "Bullying Investigation First Response Prompt product graphic.",
               },
               cta: "Get the Free Prompt",
               href: "https://workaround7.gumroad.com/l/BullyingReportFirstResponsePrompt",
@@ -661,8 +661,8 @@ function renderSchoolWorkflows(root) {
               painPoint: "Managing an investigation from intake to closure can scatter deadlines, interviews, documentation, communication drafts, and case notes across too many places.",
               solution: "A full guide and Google Sheet-based investigation system with a dashboard, tracker, district settings, communication frameworks, auto-generated case files, and copy/paste AI assistant prompts.",
               image: {
-                src: "public/images/bullying-investigation-command-center.png",
-                alt: "Bullying Investigation Command Center product graphic showing dashboard and investigation tracking features.",
+                src: "public/images/bullying-investigation-prompt-command-center.png",
+                alt: "Bullying Investigation Prompt and Command Center product graphic showing dashboard and investigation tracking features.",
               },
               cta: "Get the Full Command Center",
               href: "https://workaround7.gumroad.com/l/fzexhv",
