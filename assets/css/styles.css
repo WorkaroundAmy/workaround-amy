@@ -1392,15 +1392,15 @@ p {
   overflow: hidden;
   border: 1px solid rgba(16, 36, 63, 0.14);
   border-radius: var(--radius);
-  background: var(--navy);
+  background: var(--white);
   box-shadow: 0 10px 26px rgba(16, 36, 63, 0.08);
 }
 
 .ladder-product-images img {
   display: block;
   width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
 }
 
 .ladder-product-sections {
@@ -1429,14 +1429,14 @@ p {
   overflow: hidden;
   border: 1px solid rgba(16, 36, 63, 0.14);
   border-radius: var(--radius);
-  background: var(--navy);
+  background: var(--white);
 }
 
 .ladder-product-section img {
   display: block;
   width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
 }
 
 .ladder-product-section h4 {
