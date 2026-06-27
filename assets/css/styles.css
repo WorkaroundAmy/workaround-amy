@@ -1410,6 +1410,10 @@ p {
   margin-top: 8px;
 }
 
+.ladder-product-sections.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .ladder-product-section {
   display: flex;
   flex-direction: column;

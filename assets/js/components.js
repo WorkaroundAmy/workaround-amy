@@ -277,7 +277,7 @@ function ladderPreviewCard(item) {
   const targetMarkup = item.target ? ` target="${item.target}" rel="noopener"` : "";
   const actions = item.actions || [{ label: item.cta, href: item.href, target: item.target, isPaid: item.isPaid }];
   const sectionMarkup = item.sections?.length
-    ? `<div class="ladder-product-sections">
+    ? `<div class="ladder-product-sections ${item.sections.length === 2 ? "two" : ""}">
         ${item.sections
           .map(
             (section) => `
