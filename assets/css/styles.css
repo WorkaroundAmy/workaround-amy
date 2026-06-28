@@ -1170,14 +1170,14 @@ p {
   overflow: hidden;
   border: 1px solid rgba(16, 36, 63, 0.12);
   border-radius: var(--radius);
-  background: var(--navy);
+  background: var(--white);
 }
 
 .kit-card-image img {
   display: block;
   width: 100%;
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
 }
 
 .kit-card .card-actions {
@@ -1912,15 +1912,15 @@ p {
   overflow: hidden;
   border: 1px solid rgba(16, 36, 63, 0.16);
   border-radius: var(--radius);
-  background: var(--navy);
+  background: var(--white);
   box-shadow: var(--shadow-soft);
 }
 
 .product-preview img {
   display: block;
   width: 100%;
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
 }
 
 .ladder-hero-panel {
