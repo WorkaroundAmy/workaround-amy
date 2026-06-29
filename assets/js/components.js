@@ -19,6 +19,11 @@ const statusClass = (status = "") =>
 
 const list = (items) => items.map((item) => `<li>${item}</li>`).join("");
 
+const youtubeEmbedUrl = (url = "") => {
+  const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+  return match ? `https://www.youtube.com/embed/${match[1]}` : "";
+};
+
 const logoAsset = "public/images/workaround-amy-logo-tight.png";
 const footerLogoAsset = "public/images/workaround-amy-logo.png";
 const bannerAsset = "public/images/workaround-amy-banner.png";
@@ -193,6 +198,19 @@ export function statusBadge(status) {
 
 export function tutorialCard(tutorial) {
   const related = workflowKits.find((kit) => kit.id === tutorial.relatedKitId);
+  const embedUrl = youtubeEmbedUrl(tutorial.youtubeUrl);
+  const ctaTarget = tutorial.ctaTarget ? ` target="${tutorial.ctaTarget}" rel="noopener"` : "";
+  const videoMarkup = embedUrl
+    ? `<div class="youtube-embed">
+        <iframe
+          src="${embedUrl}"
+          title="${tutorial.title} video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>`
+    : `<div class="youtube-placeholder" aria-label="YouTube embed placeholder">
+        <span>Video placeholder</span>
+      </div>`;
   return `
     <article class="content-card tutorial-card">
       <div class="card-topline">
@@ -203,9 +221,11 @@ export function tutorialCard(tutorial) {
       <p>${tutorial.summary}</p>
       <div class="meta-line">Audience: ${tutorial.audience}</div>
       ${related ? `<div class="meta-line">Related kit: ${related.title}</div>` : ""}
-      <div class="youtube-placeholder" aria-label="YouTube embed placeholder">
-        <span>Video placeholder</span>
-      </div>
+      ${videoMarkup}
+      ${tutorial.ctaUrl ? `
+        <div class="card-actions tutorial-actions">
+          <a class="button primary small" href="${tutorial.ctaUrl}"${ctaTarget}>${tutorial.ctaLabel}</a>
+        </div>` : ""}
     </article>`;
 }
 

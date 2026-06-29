@@ -10,6 +10,20 @@ export const site = {
 
 export const tutorials = [
   {
+    id: "behavior-startup-kit",
+    title: "Behavior Startup Kit",
+    category: "School Workflows",
+    audience: "School leaders and PBIS teams",
+    summary:
+      "Build the foundation for a behavior referral startup workflow with the forms, follow-up, and cleanup pieces that keep the system usable.",
+    relatedKitId: "pbis-discipline-referral-starter-kit",
+    youtubeUrl: "https://www.youtube.com/watch?v=VwdHLlgHwSc",
+    ctaLabel: "Get the template to build with me",
+    ctaUrl: "https://workaround7.gumroad.com/l/qdvpv",
+    ctaTarget: "_blank",
+    status: "Watch",
+  },
+  {
     id: "repeating-problem-workflow",
     title: "How to Turn a Repeating Problem Into a System",
     category: "Systems Thinking",
