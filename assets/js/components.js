@@ -301,25 +301,34 @@ function ladderPreviewCard(item) {
         ${item.sections
           .map(
             (section) => `
-              <section class="ladder-product-section">
-                <figure>
-                  <img src="${section.image.src}" alt="${section.image.alt}">
-                </figure>
-                <div class="card-topline">
-                  <span>${section.label}</span>
+              <details class="ladder-product-section" open>
+                <summary>
+                  <span class="ladder-product-summary-text">
+                    <span class="ladder-product-label">${section.label}</span>
+                    <span class="ladder-product-title">${section.title}</span>
+                  </span>
                   ${statusBadge(section.status)}
+                </summary>
+                <div class="ladder-product-details">
+                  <figure>
+                    <img src="${section.image.src}" alt="${section.image.alt}">
+                  </figure>
+                  <div class="card-topline">
+                    <span>${section.label}</span>
+                    ${statusBadge(section.status)}
+                  </div>
+                  <h4>${section.title}</h4>
+                  <p><strong>Pain point:</strong> ${section.painPoint}</p>
+                  <p><strong>Solution:</strong> ${section.solution}</p>
+                  <div class="ladder-card-actions">
+                    ${
+                      section.href
+                        ? `<a class="button primary small" href="${section.href}"${section.target ? ` target="${section.target}" rel="noopener"` : ""}>${section.cta}</a>`
+                        : `<span class="button secondary small disabled-button" aria-disabled="true">${section.cta}</span>`
+                    }
+                  </div>
                 </div>
-                <h4>${section.title}</h4>
-                <p><strong>Pain point:</strong> ${section.painPoint}</p>
-                <p><strong>Solution:</strong> ${section.solution}</p>
-                <div class="ladder-card-actions">
-                  ${
-                    section.href
-                      ? `<a class="button primary small" href="${section.href}"${section.target ? ` target="${section.target}" rel="noopener"` : ""}>${section.cta}</a>`
-                      : `<span class="button secondary small disabled-button" aria-disabled="true">${section.cta}</span>`
-                  }
-                </div>
-              </section>`
+              </details>`
           )
           .join("")}
       </div>`

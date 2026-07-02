@@ -13,3 +13,18 @@ if (toggle && nav) {
     nav.classList.toggle("is-open", !expanded);
   });
 }
+
+const mobileLadderQuery = window.matchMedia("(max-width: 820px)");
+
+function syncProductLadders(event) {
+  document.querySelectorAll(".ladder-product-section").forEach((section) => {
+    if (event.matches) {
+      section.removeAttribute("open");
+    } else {
+      section.setAttribute("open", "");
+    }
+  });
+}
+
+syncProductLadders(mobileLadderQuery);
+mobileLadderQuery.addEventListener("change", syncProductLadders);

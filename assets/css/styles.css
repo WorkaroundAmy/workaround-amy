@@ -1444,6 +1444,14 @@ p {
   background: rgba(255, 255, 255, 0.88);
 }
 
+.ladder-product-section summary {
+  display: none;
+}
+
+.ladder-product-details {
+  display: contents;
+}
+
 .ladder-product-section figure {
   margin: 0 0 14px;
   overflow: hidden;
@@ -1473,6 +1481,11 @@ p {
 
 .ladder-product-section .ladder-card-actions {
   margin-top: 12px;
+}
+
+.ladder-product-label,
+.ladder-product-title {
+  display: block;
 }
 
 .ladder-card-intro {
@@ -2292,6 +2305,94 @@ p {
   .pathway-card,
   .feature-card {
     min-height: auto;
+  }
+
+  .ladder-preview-card {
+    gap: 0;
+  }
+
+  .ladder-card-intro {
+    margin-bottom: 16px;
+  }
+
+  .ladder-card-intro h3 {
+    font-size: clamp(1.45rem, 8vw, 2rem);
+    line-height: 1.1;
+  }
+
+  .ladder-card-intro p {
+    font-size: 0.98rem;
+  }
+
+  .ladder-product-sections {
+    gap: 10px;
+  }
+
+  .ladder-product-section {
+    display: block;
+    padding: 0;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.96);
+  }
+
+  .ladder-product-section summary {
+    position: relative;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 62px;
+    padding: 12px 42px 12px 14px;
+    color: var(--navy);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .ladder-product-section summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .ladder-product-section summary::after {
+    position: absolute;
+    right: 15px;
+    color: var(--teal-deep);
+    content: "+";
+    font-size: 1.45rem;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .ladder-product-section[open] summary::after {
+    content: "-";
+  }
+
+  .ladder-product-summary-text {
+    min-width: 0;
+  }
+
+  .ladder-product-label {
+    margin-bottom: 3px;
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .ladder-product-title {
+    color: var(--navy);
+    font-size: 1rem;
+    font-weight: 950;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
+  .ladder-product-details {
+    display: block;
+    padding: 0 14px 16px;
+  }
+
+  .ladder-product-details .card-topline {
+    display: none;
   }
 
   .mobile-home-hidden,
