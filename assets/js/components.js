@@ -232,7 +232,7 @@ export function tutorialCard(tutorial) {
 export function workflowKitCard(kit) {
   const comingSoon = statusClass(kit.status) === "coming-soon";
   const priceMarkup = kit.price ? `<span class="price">${kit.price}</span>` : `<span class="price muted-price">Coming soon</span>`;
-  const targetMarkup = kit.ctaTarget ? ` target="${kit.ctaTarget}" rel="noopener"` : "";
+  const targetMarkup = kit.ctaTarget ? ` target="${kit.ctaTarget}" rel="${kit.ctaRel || "noopener"}"` : "";
   return `
     <article class="content-card kit-card">
       <div class="card-topline">
